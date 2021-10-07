@@ -1,0 +1,90 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div.parent {
+            height: 500px;
+            background-color: black;
+        }
+
+        div.child {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+
+        }
+
+        div.parent:hover div.child {
+            /* animation: 1s move ease;
+            animation-fill-mode: forward; */
+            /* as the object after the animation comes back to the orginal position so this stops it  */
+            /* if we remove this hover transition will still work but but animation will not  */
+
+        }
+
+        div.child {
+            /* if we use animation here directly it will move at every refresh   */
+            animation: 1s move ease;
+            /* animation-iteration-count: 3;  */
+            /* animation-iteration-count: 1;  */
+            animation-iteration-count: infinite;
+            /* now the animation will run three times  */
+            /* animation-direction: reverse;
+            animation-direction: normal; */
+            animation-direction: alternate;
+            border-radius: 50%;
+        }
+
+        div.child-2 {
+            height: 100px;
+            width: 100px;
+            animation: 1s move ease;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            border-radius: 50%;
+            margin-left: 100px;
+            animation-delay: 1s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateX(0vw);
+            }
+
+            /* in animation we refer to frames by percentage completetion  */
+            /* 1% {
+                transform: translateX(1vw)
+            }
+
+            2% {
+                transform: translateX(2vw);
+            } */
+
+            /* 3%{}
+            4%{}
+            5%{}
+            6%{} */
+
+            /* instead of writing every percentage we only need to write 0% and 100% rest it will see itself  */
+
+            /* it is not an element property it is a state preperty so we need to add it to hover  */
+            50% {
+                transform: translate(50vh, 300px);
+                background-color: cyan;
+            }
+
+            100% {
+                transform: translateX(80vw);
+            }
+
+            /* 0% {
+                transform: translateY(0vw);
+            }
+            100% {
+                transform: translateY(80vw);
+            } */
+
+        }
