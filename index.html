@@ -5,155 +5,168 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS-1</title>
+    <title>CSS-2</title>
     <style>
-        h2 {
-            color: red;
-            font-size: 200px;
+        * {
+            margin: 0px;
+            paddin: 0px;
+            box-sizing: border-box;
+            /* text-decoration: none;  */
+            /* this property is used to let go of the underline under the links  */
         }
 
-        p {
-            color: green;
-            font-weight: bold;
+        /* this * is the universal selector and it selects everything  */
+
+        /* div {
+            background-color: blueviolet;
+            width: 400px;
+            height: 200px;
+            margin: 0px;
+            padding: 0px;
+        } */
+
+        /* span {
+            widht: 100px;
+            /* span is a inline element and they can't attain such properties  */
+        background-color: cyan;
         }
 
-        #first {
-            color: violet;
+
+
+        /* .background {
+            background-color: green;
+        } */
+
+        .box {
+            /* background-color: cadetblue;
+            width: 300px;
+            height: 300px; */
+            /* padding-top: 50px;
+            padding-right: 50px; */
+            /* this will not work because but it will mess up with the width or height because instead of the the element the padding shifts the box 50 px  */
+            /* it happens because the element already have space more than 50 px  */
+            /* padding-left: 50px;
+            padding-bottom: 50px; */
+            /* the padding or margin property always changes the widht or height of the box so we need to do the calculations */
+            /* box-sizing: content-box; */
+            /* content box just handles the box around the content  */
+            box-sizing: border-box;
+            /* be sane about the padding values border bxcan also be overflowed */
+            /* this handles the box as we are pointing to its border  */
+            /* there is a short hand  */
+            /* padding: 50px 30px 20px 30px; */
+            /* top right bottom left  */
+            /* or u can just give one value and it will set it for all sides  */
+            /* if u pass two values it will give first one to top and bottom and second one to right and left  */
+            /* margin-top: 50px; */
+            /* margin is outside property and padding is inside  */
+            /* otherwise margin and padding work almost the same way  */
+            /* you can set margin 0  */
+            margin: 0px;
+            padding: 0px;
+
         }
 
-        .one {
-            color: blue;
+
+        body {
+            /* background-color: black; */
+            /* we see that the top element already have some margin to remove this a property is there  */
+            /* this means that the body have a padding for all the childs present inside the body  */
+            /* we can chnage this by  */
+            /* padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px; */
         }
 
-        .two {
-            color: brown;
+        .parent {
+            background-color: darkblue;
+            height: 100px;
+            /* width:400px;  */
+            /* pixel is an absolute value    */
+            /* width: 80vw;  */
+            /* vw stand for viewport width and vh for viewport hieght  */
+            /* these are relative to viewport  */
+            padding: 20px;
+            width: 50vw;
         }
 
-        .orange {
-            color: orange;
+        /* block level element takes width according to the parent element  */
+
+        .child {
+            background-color: cyan;
+            height: 20px;
+            /* width: 80%;  */
+            /* it is going to be 80 % of the parent as it is relative to the parent  */
+            /* default height is not set for block level element  */
         }
 
-        .big {
-            font-size: 90px;
-        }
-
-        #magenta {
-            color: magenta;
-        }
-
-        .yellow {
-            color: yellow;
-        }
-
-        h3 {
-            color: purple;
-        }
-
-        img {
-            width: 500px;
-            /* border-color: black;
-            border-width: 20px;
-            border-style: dashed; */
-            border-radius: 100px;
-            border: 20px dashed black;
-            /* this is the short hand for border  */
-            /* filter: brightness(100); */
-            /* filter: blur(10px); */
-            /* filter:invert(20); */
-            /* border-top: 40px solid blue; */
-            /* there are many properties in css to play around and we can't cover all of them */
-        }
-
-        div {
-            height: 30px;
-            background-color: tomato;
-        }
-
-        span {
-            height: 30px;
-            width: 30px;
-            background-color: black;
+        .height {
+            /* background-color: darkcyan;
+     height:60%; */
+            /* it won't show up as the parent which is body does not have any height set if the body is empty   */
+            /* so don't use any % unit until the parents height is set  */
         }
     </style>
-    <!-- there is also a short hand  -->
-    <!-- style tag selects all elements of the same type -->
-    <!-- selectors are something which allow us to select something specific -->
-    <!-- elemet selectors help us select all the elements  -->
-    <!-- # is used to select ids  -->
-    <!-- seniority order id>element selector  -->
-    <!-- if you want to give mutliple elements same style which are of different types we can use class -->
-    <!-- all the childs of the class obtain same properties   -->
-    <!-- a class can be given to many elements and they all will become its childs  -->
 </head>
-<!-- CSS is very symentic like to change thecolour we use color -->
-<!-- It is used to like make site attractive -->
-<!-- CSS is case sensitive and they need to be used with correct spelling -->
-<!-- there is a seniority order and internal CSS sits at its top  -->
-<!-- but if you write !important your style will be executed no matter the seniority  -->
-<!-- if you want to over come styles from internal styles you can use inline CSS -->
-<!-- CSS in heaad tag is know as internal CSS -->
-<!-- but instead of using inline CSS we can also use id which is unique to everyone -->
-<!-- . operater is used to select a class  -->
 
 <body>
-    <h1 style="color:blue; font-size:10px">Heading one</h1>
-    <p style="font-size:30px; color:yellowgreen ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Deserunt
-        architecto repellendus
-        eligendi sint, velit
-        voluptate, inventore ullam impedit et tenetur debitis laudantium dolores. Exercitationem rerum doloremque
-        architecto id? Distinctio, necessitatibus.
-    </p>
-    <h1 style="color:blue; font-size:10px">Heading one</h1>
-    <p style="font-size:30px; font-family: Metropolis;color:red ">Lorem ipsum dolor sit amet consectetur adipisicing
-        elit.
-        Deserunt
-        architecto repellendus
-        eligendi sint, velit
-        voluptate, inventore ullam impedit et tenetur debitis laudantium dolores. Exercitationem rerum doloremque
-        architecto id? Distinctio, necessitatibus.
-    </p>
-    <h1 id="first">Heading one</h1>
-    <p id ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Deserunt
-        architecto repellendus
-        eligendi sint, velit
-        voluptate, inventore ullam impedit et tenetur debitis laudantium dolores. Exercitationem rerum doloremque
-        architecto id? Distinctio, necessitatibus.
-    </p>
-    <!-- we are repeating the style attribute everytime -->
-    <!-- and copying is very bad for us -->
-    <!-- made our code difficult to debug   -->
-    <h2>I am H2</h2>
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, aliquid architecto voluptatum perspiciatis illum
-        quod beatae repudiandae reiciendis! A, non dignissimos. Cupiditate recusandae nulla aut et reiciendis tempore
-        ullam tempora.
-    </p>
-    <h2 class=" one">i am something</h2>
-    <p class="one">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis omnis nostrum nesciunt autem,
-        eveniet nam aut voluptatem, cupiditate vitae, cum adipisci eligendi molestias doloribus alias iste dicta aliquid
-        culpa nobis.
-    </p>
-    <h2 class="two">i am something</h2>
-    <p class="two">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis omnis nostrum nesciunt autem,
-        eveniet <b class="orange">nam aut</b> voluptatem, cupiditate vitae, cum adipisci eligendi molestias doloribus
-        alias ist <b class="orange big">sdjkhjxcv</b> dlzxkfjxlckvjcxvvm kj lkzxv
-    </p>
 
-    <h3>hello</h3>
-    <h3 class="yellow">hello</h3>
-    <h3 class="yellow" id="magenta"> hello</h3>
-    <h3 class="yellow" id="magenta" style=" color:turquoise"> hello</h3>
-    <!-- seniority order "elements selector<class<id<inline" -->
+    <div>
+        <h2>pointers for div</h2>
+        <ol>
+            <li>Width of block level element is 100% of the viewport width</li>
+            <li>height of a block isn't set by default</li>
+            <li>height and width can be specified for block level elements using CSS</li>
+        </ol>
+    </div>
+    <!-- width is specified in html but height can never be specified as it changes according to the object -->
+    <span>
+        <h2>pointers for span</h2>
+        <ol>
+            <li>Width of an inline level element is dependent on the content</li>
+            <li>height of an inline isn't set by default</li>
+            <li>height and width cannot be specified for the inline level elements using CSS</li>
+        </ol>
+    </span>
+    <!-- if we use a block level element inside a span it reads it as a different content not as a span  -->
+    <!-- so we can't add styles to a block element inside a span  -->
+    <!-- we can't add a block level elemnet inside a span -->
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum sequi impedit consectetur, nihil esse
+        pariatur modi laudantium labore amet nisi nostrum quae fugiat earum. Aspernatur vitae ipsam odio est.</span>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore vitae ratione modi deserunt,
+        perspiciatis in quo expedita distinctio quidem repudiandae alias, amet id impedit laborum voluptatem,
+        consequuntur facilis et.
+    </div>
+    <!-- box model says that every element is a box -->
+    <!-- as we can see in case of every element till now -->
+    <table class="background">
+        <tr>
+            <td>me</td>
+            <td>me</td>
+        </tr>
+        <tr>
+            <td>me</td>
+            <td>me</td>
+        </tr>
+    </table>
+    <a href="" class="background">hello</a>
+    <b class="background"> hello friends</b>
+    <!-- padding the space between content and original box -->
+    <!-- margin is the real thickness of the box or the difference between two boxes is margin as we have in websites perimeter -->
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum placeat maxime voluptatibus atque,
+        exercitationem voluptatum enim assumenda, illum itaque dolorum, obcaecati adipisci corrupti ipsum? Ex minus
+        adipisci ab ad!
+    </div>
+    <!-- spacing between the text and the box is padding  -->
 
-    <img src="https://pictures.topspeed.com/IMG/crop/202011/cool-car-for-sale-20-5_1600x0w.jpg" alt="">
-    <div></div>
-    <span>hello</span>
-    <!-- span will not show up as we can't specify width and height for inline elements explicitely they always take the width of the object which is inside -->
 
+
+    <div class="parent">
+        <div class="child"></div>
+
+    </div>
+    <div class="height"></div>
 
 
 </body>
