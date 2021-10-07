@@ -1,51 +1,103 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title> Day 5</title>
+    <meta name="description" content="This is a site for html learners">
+    <title>Day-6</title>
+    <!-- discription is used to have a little discritpion under your chrome site when seen in search -->
+    <!-- keyword are used to help the browser to know what your site is all about -->
+    <meta name="keyword" content="Full stack,html,css,javascipt,react">
+    <meta name="viewport" content="width-device-width initial-scale=1">
+
 </head>
 
 <body>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <b>I am bold.</b>
-    <i>Hello world be mine</i>
-    <a href="tesla.com">click me and go to world</a>
-    <p>Hello everyone reading this is a paragraph.</p>
+    <!-- meta tags are used to give commands which are not needed for the end user to know  -->
+    <!-- viewport is the part of site we can see on our screen so all the visible area of a page -->
+    <!-- view port helps us to change the size of website according to our screen -->
+    <!-- symantic tags just make more sense and also add sense to our code if someone who did not write the code can also understand the code -->
+    <!-- each element can have a single id no two elements can have same id -->
 
-    <!-- block elements are those elements which take all the space next to them and inline elements are those elements which can stay in a single line with each other -->
+    <!-- navbar -->
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Learn</a>
+        </nav>
+    </header>
+    <div id="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Learn</a>
+    </div>
+    <!-- istead of div we can use nav and this makes more sense instead of div with an id -->
 
-    <video controls src="" width="400px"></video>
-    <video autoplay controls width="400px">
-        <!-- autoplay attribute makes the vedio autoplay and chrome forbids autoplay -->
-        <source src="">
-        Vedio format not supported
-        <!-- this above line will be displayed if the vedio is not rendered -->
-    </video>
-    <iframe height="300" width="300" src="https://www.youtube.com/embed/sMDUOkCqCmA" title="YouTube video player"
-        frameborder="0"></iframe>
-    <audio src=""></audio>
-    <!-- Audio and video tags are similar same every thing same path and everything is same. -->
-    <hr>
-    <!-- hr refers to horizontal line and it creates a horizontal line -->
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Place</th>
-        </tr>
-        <tr>
-            <td>Harsh</td>
-            <td>Delhi</td>
-        </tr>
-        <tr>
-            <td>Biro</td>
-            <td>Patna</td>
-        </tr>
-    </table>
-    <!-- th refers to table head, td is table data, tr is table row. -->
-    <!-- a div is a block element and span is a inline element. We use these as these helps in styling the sheets -->
-    <div>I am a div</div>
-    <span>I am span </span>
+    <main>
+        <!-- Main content  -->
+        <div id="main">
+            <!-- 1st section  -->
+
+            <p id='first'>
+            <h3>First content</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem ex vero. Quis
+                inventore
+                accusamus eos hic debitis veniam itaque quam. Veniam nam possimus voluptatem optio rerum facilis? Quod,
+                illum.
+                Aspernatur dolor, reprehenderit quam autem quae expedita repudiandae quos sit beatae quod rerum odit
+                molestias quia inventore doloremque dolores consequatur veritatis esse nam dignissimos ex! Similique
+                harum
+                repudiandae nulla placeat!
+            </p>
+            </p>
+
+            <section>
+                <h3>First content</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem ex vero. Quis
+                    inventore
+                    accusamus eos hic debitis veniam itaque quam. Veniam nam possimus voluptatem optio rerum facilis?
+                    Quod,
+                    illum.
+                    Aspernatur dolor, reprehenderit quam autem quae expedita repudiandae quos sit beatae quod rerum odit
+                    molestias quia inventore doloremque dolores consequatur veritatis esse nam dignissimos ex! Similique
+                    harum
+                    repudiandae nulla placeat!
+                </p>
+            </section>
+            <!-- here this section tag is more semantic and can replace the paragraph tag -->
+            <!-- second section  -->
+
+            <p id="second">
+            <h3>Second content</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus exercitationem ex vero. Quis
+                inventore
+                accusamus eos hic debitis veniam itaque quam. Veniam nam possimus voluptatem optio rerum facilis? Quod,
+                illum.
+                Aspernatur dolor, reprehenderit quam autem quae expedita repudiandae quos sit beatae quod rerum odit
+                molestias quia inventore doloremque dolores consequatur veritatis esse nam dignissimos ex! Similique
+                harum
+                repudiandae nulla placeat!
+            </p>
+            </p>
+
+        </div>
+        <!-- footer  -->
+        <div id="footer">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Github</a>
+        </div>
+    </main>
+    <!-- here this footer is a semantic tag and makes more sense then this div  -->
+    <footer>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">Github</a>
+    </footer>
+
 
 </body>
 
