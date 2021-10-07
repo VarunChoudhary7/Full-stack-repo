@@ -1,394 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 1st -->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS-5</title>
     <style>
         * {
+            margin: 0;
             padding: 0;
-            margin: 0;
             box-sizing: border-box;
-            margin: 4px;
-            /* remove it in starting add it with background class */
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
         }
 
-        * {
-            /* padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            margin: 10px; */
-            /* remove it in starting add it with background class */
-        }
-
-        nav {
-            /* background-color: orange;
-            color: white;
-            padding: 20px;
-            font-size: 1.2rem;
-            width: 100vw;
-            position: sticky; */
-            /* it means the element stays static until some point  */
-            /* this makes the elements stick to the top after a certian height  */
-            /* top: 0; */
-            /* like in this case when it reaches 0 it stickes  */
-        }
-
-        .parent {
-            /* height: 500px; */
-            /* min-height: 300px; */
-            min-height: 400px;
+        div.parent {
+            height: 500px;
             background-color: black;
-            position: relative;
-            display: flex;
-            /* flex is a parent property so it is assigned to parent  */
-            /* flex is by default in row  */
-            /* so the primary axis is row   */
-            /* flex-direction: row;  */
-            /* flex-direction: column;  */
-            /* flex-direction:column-reverse ; */
-            /* flex-direction: row-reverse; */
-            /* the whole section slips and hence the objects move to right as well  */
-            flex-direction: row;
-            /* justify-content: center;  */
-            /* justify-content: start;  */
-            /* justify-content: end;  */
-            justify-content: center;
-            /* justify-content: space-between;  */
-            /* justify-content: space-around;  */
-            /* justify-content: space-evenly;  */
-            /* justify content aligns the elements in only the direction of the primary axis  */
-            /* it works only in primary direction */
-            align-items: center;
-            /* align-items: stretch;  */
-            /* align item works in the non-primary axis or secondary axis  */
-            /* they also make it responsive  */
-            /* align-items: flex-end; */
-            /* align-items: flex-start;  */
-            /* in case of flex they don't move to next line they shrink  */
-            flex-wrap: wrap;
-            /* it makes them work just like inline element  */
-
-
-
-
         }
 
-
-        .child {
+        div.child {
             width: 100px;
-            /* height: 100px; */
-            height: 150px;
-            background-color: orange;
-            /* position: absolute; */
-            /* if the position of parent is not relative then the margin will act on body which is the second relative parent  */
-            /* bottom: 0;
-            right: 0; */
-            /* for bottom right corner  */
-            /* top: 220px;
-            left: 220px; */
-            /* almost in center  */
-            /* margin-top: 220px; */
-            margin: 10px;
-            /* display: inline-block;  */
-            /* they both are doing the same things display and flex here  */
-            /* we applied inline to child while flex to the parent so it is a parent property  */
-        }
-
-        .second_child {
-            /* width: 100px;
             height: 100px;
             background-color: orange;
-            position: absolute; */
-            /* if we change the positions to static we will see that indeed the margin works which shows us that margins work only on static positions  */
-            /* after adding this the first child should have moved 220 px downwards but it didn't , so we came to know that margins work diffeently in relation  */
+            transition: 1s ease;
+            /* transition is a element property not a state property hence we need to add it in the element  */
+            transition-property: transform;
+            /* this allows to select a single transition property  */
+
+
+
         }
 
-        .background {
-            color: #f1f1f1;
-        }
-
-        h1.background {
-            /* this creates a hierarchy saying all the h1's having class background  */
-            background-color: purple;
-        }
-
-        h2.background {
-            background-color: seagreen;
-        }
-
-        h3.background {
-            background-color: slategray;
-        }
-
-        span.background {
-            background-color: orange;
-        }
-
-        h2.background#unique {
-            /* this hierarchy means h2 with class background having id unique  */
+        div.parent:hover div.child {
+            transform: translateX(80vw);
             background-color: orchid;
-        }
 
-        .big {
-            font-size: 2rem;
-        }
-
-        h1.big {
-            font-size: 4rem;
-        }
-
-        div.special {
-            background-color: green;
-        }
-
-        /* div.all h1  */
-        div.all div:nth-child(2n-1) {
-            /* this is called child selector, this space allows us to select the child  */
-            background-color: yellow;
         }
     </style>
-</head>
 
-<body>
-    <!-- <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam hic asperiores rerum alias quisquam repellat
-        eligendi, exercitationem dolorem nostrum provident, delectus quod, fugiat tempore. Illo accusamus necessitatibus
-        maiores, neque voluptatibus dolore natus? Sequi omnis modi, veniam voluptates eius nam, maxime alias id ullam
-        placeat assumenda soluta officia, ab nobis ea. Accusamus rerum repellendus esse aliquam in voluptatum autem
-        quas, dolore at nesciunt quasi! Atque vero, dolores recusandae voluptates consequuntur in porro minus error
-        ipsum dicta dolorum! Maxime illo, unde, doloremque sed reiciendis quas aperiam totam error, quam quaerat facere
-        quos saepe ipsa nisi ipsam. Cumque sed mollitia accusantium error nostrum.
-
-    </div>
-    <nav>
-        lorem
-    </nav>
-    <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At id ut adipisci porro, quae consectetur accusantium
-        error dolorum optio illum asperiores, unde, vel incidunt eius perferendis obcaecati et. Aut nisi doloremque
-        dolorem quod aspernatur in a, exercitationem optio, asperiores ipsam odit saepe laborum qui accusamus cumque id
-        reiciendis commodi quisquam natus animi. Est, tempore velit sint fuga ipsum placeat perspiciatis, laudantium
-        aspernatur quaerat accusamus a cumque quos tenetur consequuntur minima! Exercitationem accusantium assumenda ex
-        fugiat quae ratione. Perferendis quam officia, quasi molestiae harum numquam facilis aperiam minus accusamus
-        placeat itaque, similique iste molestias mollitia quos officiis a id sequi quisquam unde, ut ratione architecto
-        tenetur. Velit delectus repellendus modi inventore odit atque illum dolorum ipsa eligendi alias dignissimos eius
-        iste aspernatur eum fugiat optio recusandae maiores, necessitatibus libero. Quaerat quidem impedit eius, rerum
-        velit obcaecati repellendus ex deleniti distinctio. Ipsum eaque voluptates incidunt veniam! Rem et, fugit
-        officiis iste ut debitis similique dolorem nihil voluptatem dolor? Itaque nemo adipisci minus dignissimos
-        temporibus, sapiente quos, tempore esse veniam eum at obcaecati debitis aperiam! Hic consectetur commodi facilis
-        similique consequuntur nemo ut iste sit mollitia, porro cumque perspiciatis. Dolore enim natus nihil, molestiae
-        sint maiores doloribus quibusdam, optio officiis sunt accusantium dolorum nam vero voluptas suscipit voluptate,
-        rerum odio? Exercitationem, aspernatur. Perspiciatis nostrum sed excepturi voluptates non dignissimos sunt
-        accusantium distinctio! Fuga molestiae eum laboriosam doloribus at maiores explicabo sequi dolorem ullam vitae
-        cumque nostrum voluptas aut ipsa omnis ratione est et perferendis voluptate, quidem quibusdam atque unde. Ipsum
-        culpa quam corrupti numquam eos hic impedit doloribus aperiam tenetur ipsam deleniti, in dolores, deserunt amet
-        voluptates error, sed tempora fugit nesciunt! Quo mollitia, ut quasi, sed illo quidem nulla totam neque
-        aspernatur deleniti quia ab pariatur blanditiis quibusdam repellat omnis, unde accusantium commodi doloribus
-        sunt cumque autem consectetur? Ab quaerat minus tenetur voluptas eveniet incidunt, nesciunt impedit obcaecati
-        quos, fuga architecto consectetur corporis quae ad! Nesciunt repudiandae quos similique quidem, accusantium sit
-        esse maiores saepe officia. Inventore consectetur itaque similique, earum id doloremque accusamus quis
-        reiciendis eos? Ipsum nihil cum, soluta fuga tempora hic quod velit libero quas dolor beatae quibusdam qui ipsam
-        iste porro quia sapiente, dolorum architecto aspernatur perferendis odio amet dolore! Repellat placeat similique
-        a dolores, rerum quae cumque perspiciatis quia voluptate eligendi excepturi ex minima ipsa debitis nesciunt
-        illum. Minima ipsum vel dolor velit reiciendis magni, libero pariatur saepe tempore, neque eveniet asperiores
-        nisi ex. Libero ratione aperiam sunt molestias deleniti nobis non ad in praesentium minima culpa doloribus
-        suscipit, itaque possimus quae illo ducimus reprehenderit porro commodi enim rem ullam? Cum repudiandae magnam
-        vel neque veniam! Voluptas deserunt iusto repudiandae provident. Consectetur recusandae voluptatum quaerat
-        dolores fugit reiciendis. Repellat, accusamus nulla reprehenderit dolores delectus ullam explicabo doloribus
-        blanditiis! In voluptas tempore temporibus dolore sit illum et quod perspiciatis minima molestias amet ipsum,
-        quis illo labore non esse recusandae. Repellat aperiam dolore libero quibusdam nihil quia odit perferendis
-        pariatur optio doloremque eius ut, cumque dicta, maxime mollitia fugiat quaerat expedita et qui, saepe
-        aspernatur excepturi! Eaque, minus tempore!
-    </div> -->
-    <!-- <div class="parent"> -->
-    <!-- <div style="background-color: paleturquoise" ; class="child"></div>
-        <div style="background-color: red" ; class="child"></div>
-        <div style="background-color: blue" ; class="child"></div>
-        <div style="background-color: paleturquoise" ; class="child"></div>
-        <div style="background-color: red" ; class="child"></div>
-        <div style="background-color: blue" ; class="child"></div>
-        <div style="background-color: paleturquoise" ; class="child"></div>
-        <div style="background-color: red" ; class="child"></div>
-        <div style="background-color: blue" ; class="child"></div> -->
-    <!-- <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div>
-        <div class="child"></div> -->
-    <!-- <div class="second_child"></div> -->
-    <!-- </div>  -->
-    <!-- <h1 style="background-color: pink;">I am heading one</h1>
-    <h2 style="background-color: blue;">I am heading two</h2>
-    <h3 style="background-color: green;">Iam heading three</h3>
-    <hr>
-    <hr> -->
-    <!-- we can create ids and style all of these  -->
-    <!-- we can use classes but that will still be difficult to maintain for all  -->
-
-
-
-    <h1 class="background">I am heading one</h1>
-    <h2 id="unique" class="background">I am heading two</h2>
-    <h2 class="background">I am two by two</h2>
-    <h3 class="background">Iam heading three</h3>
-    <br>
-
-    <span class="background">I'm a span</span>
-    <span class="big">i am a span</span>
-    <h1 class="big">I am h1</h1>
-    <div class="all">
-        <div> I am a div </div>
-        <div>hello frnds</div>
-        <div>div again</div>
-        <div>div again</div>
-    </div>
-
-
-
-</body>
-
-</html>
-
-
-* {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
-margin: 4px;
-/* remove it in starting add it with background class */
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-
-h2 {
-padding: 5px;
-color: #f1f1f1;
-background-color: orchid;
-}
-
-h2:hover {
-background-color: red;
-cursor: cell;
-}
-
-div::selection {
-background-color: lime;
-}
-
-input:focus {
-background-color: red;
-color: blue;
-font-size: 2rem;
-}
-
-h2::after {
-content: "I am after";
-color: royalblue;
-font-size: 1rem;
-position: relative;
-}
-
-h2::before {
-content: "I am before";
-color: royalblue;
-font-size: 1rem;
-position: relative;
-}
-</style>
-
-</head>
-
-<body>
-    <h2>Heading</h2>
-    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum dolorem aspernatur asperiores hic perspiciatis?
-        Officia laboriosam blanditiis nisi, inventore dicta laudantium molestias voluptatum quod. Doloremque illo
-        repellendus deleniti iusto iste.</div>
-    <input type="text">
-
-
-
-</body>
-
-</html>
-h2:nth-child(1) {
-padding: 5px;
-color: #f1f1f1;
-background-color: yellowgreen;
-transition-duration: 10s;
-transition-timing-function: linear;
-
-}
-
-h2:nth-child(2) {
-padding: 5px;
-color: #f1f1f1;
-background-color: yellowgreen;
-transition-duration: 10s;
-transition-timing-function: ease-in;
-
-}
-
-
-
-
-h2:hover {
-background-color: red;
-cursor: cell;
-}
-</style>
-
-</head>
-
-<body>
-    <h2>Heading</h2>
-    <h2>Heading</h2>
-
-
-
-
-</body>
-
-</html>
-
-
-div.parent {
-background-color: black;
-min-height: 500px;
-}
-
-div.child {
-background-color: yellowgreen;
-height: 100px;
-width: 100px;
-border-radius: 50%;
-/* transform: translate(10px); */
-/* transform: rotateY(60deg); */
-transition-duration: 5s;
-/* transition-timing-function: linear; */
-/* transition-timing-function: ease-in; */
-transition-timing-function: ease-out;
-transition-delay: 2sec;
-/* short hand */
-transition: 2s ease-in 1sec;
-}
-
-div.parent:hover div.child {
-background-color: blue;
-transform: rotateY(180deg);
-transform: translateX(200px);
-}
-</style>
 </head>
 
 <body>
     <div class="parent">
-        <div class="child">Child</div>
+        <div class="child">
+
+        </div>
+    </div>
+</body>
+<!-- 1st  -->
+<!-- 2nd  -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    div.parent {
+        height: 500px;
+        background-color: black;
+    }
+
+    div.child {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+
+    }
+
+    div.parent:hover div.child {
+        /* animation: 1s move ease;
+        animation-fill-mode: forward; */
+        /* as the object after the animation comes back to the orginal position so this stops it  */
+        /* if we remove this hover transition will still work but but animation will not  */
+
+    }
+
+    div.child {
+        /* if we use animation here directly it will move at every refresh   */
+        animation: 1s move ease;
+        /* animation-iteration-count: 3;  */
+        /* animation-iteration-count: 1;  */
+        animation-iteration-count: infinite;
+        /* now the animation will run three times  */
+        /* animation-direction: reverse;
+        animation-direction: normal; */
+        animation-direction: alternate;
+        border-radius: 50%;
+    }
+
+    div.child-2 {
+        height: 100px;
+        width: 100px;
+        animation: 1s move ease;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        border-radius: 50%;
+        margin-left: 100px;
+        animation-delay: 1s;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(0vw);
+        }
+
+        /* in animation we refer to frames by percentage completetion  */
+        /* 1% {
+            transform: translateX(1vw)
+        }
+
+        2% {
+            transform: translateX(2vw);
+        } */
+
+        /* 3%{}
+        4%{}
+        5%{}
+        6%{} */
+
+        /* instead of writing every percentage we only need to write 0% and 100% rest it will see itself  */
+
+        /* it is not an element property it is a state preperty so we need to add it to hover  */
+        50% {
+            transform: translate(50vh, 300px);
+            background-color: cyan;
+        }
+
+        100% {
+            transform: translateX(80vw);
+        }
+
+        /* 0% {
+            transform: translateY(0vw);
+        }
+        100% {
+            transform: translateY(80vw);
+        } */
+
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="child-2"></div>
+        </div>
     </div>
 
+
 </body>
+
+
+
+<!-- 2nd  -->
+
+<!-- 3rd  -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-5</title>
+    <link rel="stylesheet" href="./Assets/CSS/Day-14.css">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="child-2"></div>
+        </div>
+    </div>
+
+
+</body>
+<!-- 3rd  -->
 
 </html>
