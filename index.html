@@ -5,335 +5,390 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS-3</title>
+    <title>Document</title>
     <style>
         * {
-            margin: 0px;
-            padding: 0px;
+            padding: 0;
+            margin: 0;
             box-sizing: border-box;
+            margin: 4px;
+            /* remove it in starting add it with background class */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+
+        * {
+            /* padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            margin: 10px; */
+            /* remove it in starting add it with background class */
+        }
+
+        nav {
+            /* background-color: orange;
             color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+            width: 100vw;
+            position: sticky; */
+            /* it means the element stays static until some point  */
+            /* this makes the elements stick to the top after a certian height  */
+            /* top: 0; */
+            /* like in this case when it reaches 0 it stickes  */
         }
 
-        .units {
-            /* background-color: black;
-            color: white;
-            height: 100px; */
-            /* font-size: 1rem; */
-            /* rem is a relative unit for fonts as font size differ on phone pcs and laptops so it helps to keep them all in check */
-            /* it is related to root font size that's why rem  */
-            /* font-size: 1 em; */
-            /* it is not relative it is absoulte like pixel iem=16pixel */
-        }
-
-        h1 {
-            /* background-color: crimson;
-            color: white;
-            padding: 10px; */
-            /* text-align: center; */
-            /* it is a block property   */
-            /* width: 50vw; */
-            /* text-align: right; */
-            /*text-align: left; */
-            /* padding-left: 60%; */
-            /* height: 50vh;
-            padding-top: 20%; */
-        }
-
-        div {
-            /* height: 100px; */
-            /* height: 200px; */
-            /* min-height: 20px;
-            margin: 20px;
-            background-color: orange; */
-        }
-
-        .two {
-            /* margin-top: 100px; */
-            /* to shift the element we can use this  */
-            /* background-color: blue; */
-            /* position: static; */
-            /* default position  */
-            /* left: 50px;
-            top: 30px; */
-            /* position: relative; */
-            /* it means relative to its actual positioning when it was static  */
-            /* top: 40px;
-            right: 40px; */
-        }
-
-        h2 {
-            /* background-color: red; */
-            /* position: relative; */
-            /* position: absolute; */
-            /* this makes it relative to the parent */
-            /* this also changes the width of the element like it is an inline element but it is still a block level element and you can change its height*/
-            /* left: 70%;  */
-            /* right: 0; */
-            /* right: 0;
-            bottom: 0; */
-            /* bottom right  */
-            /* bottom: -100px; */
-        }
-
-        .bot {
-            /* width: 80px;
-            position: fixed; */
-            /* onw my image will be fixed relative to the viewport  */
-            /* bottom: 20px;
-            right: 20px;
-            cursor: pointer;  */
-
-        }
-
-        div {
-            background-color: orange;
-            height: 500px;
-            /* in this case as the parent of h2 is not relative so it will go to its grand parents to see if it is relative and then make itself relative to them  */
+        .parent {
+            /* height: 500px; */
+            /* min-height: 300px; */
+            min-height: 400px;
+            background-color: black;
             position: relative;
-            /* now this will be raltive to div as the parent is also relative  */
+            display: flex;
+            /* flex is a parent property so it is assigned to parent  */
+            /* flex is by default in row  */
+            /* so the primary axis is row   */
+            /* flex-direction: row;  */
+            /* flex-direction: column;  */
+            /* flex-direction:column-reverse ; */
+            /* flex-direction: row-reverse; */
+            /* the whole section slips and hence the objects move to right as well  */
+            flex-direction: row;
+            /* justify-content: center;  */
+            /* justify-content: start;  */
+            /* justify-content: end;  */
+            justify-content: center;
+            /* justify-content: space-between;  */
+            /* justify-content: space-around;  */
+            /* justify-content: space-evenly;  */
+            /* justify content aligns the elements in only the direction of the primary axis  */
+            /* it works only in primary direction */
+            align-items: center;
+            /* align-items: stretch;  */
+            /* align item works in the non-primary axis or secondary axis  */
+            /* they also make it responsive  */
+            /* align-items: flex-end; */
+            /* align-items: flex-start;  */
+            /* in case of flex they don't move to next line they shrink  */
+            flex-wrap: wrap;
+            /* it makes them work just like inline element  */
+
+
+
+
         }
 
-        h2 {
-            background-color: peru;
-            position: absolute;
-            bottom: 0;
+
+        .child {
+            width: 100px;
+            /* height: 100px; */
+            height: 150px;
+            background-color: orange;
+            /* position: absolute; */
+            /* if the position of parent is not relative then the margin will act on body which is the second relative parent  */
+            /* bottom: 0;
+            right: 0; */
+            /* for bottom right corner  */
+            /* top: 220px;
+            left: 220px; */
+            /* almost in center  */
+            /* margin-top: 220px; */
+            margin: 10px;
+            /* display: inline-block;  */
+            /* they both are doing the same things display and flex here  */
+            /* we applied inline to child while flex to the parent so it is a parent property  */
+        }
+
+        .second_child {
+            /* width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute; */
+            /* if we change the positions to static we will see that indeed the margin works which shows us that margins work only on static positions  */
+            /* after adding this the first child should have moved 220 px downwards but it didn't , so we came to know that margins work diffeently in relation  */
+        }
+
+        .background {
+            color: #f1f1f1;
+        }
+
+        h1.background {
+            /* this creates a hierarchy saying all the h1's having class background  */
+            background-color: purple;
+        }
+
+        h2.background {
+            background-color: seagreen;
+        }
+
+        h3.background {
+            background-color: slategray;
+        }
+
+        span.background {
+            background-color: orange;
+        }
+
+        h2.background#unique {
+            /* this hierarchy means h2 with class background having id unique  */
+            background-color: orchid;
+        }
+
+        .big {
+            font-size: 2rem;
+        }
+
+        h1.big {
+            font-size: 4rem;
+        }
+
+        div.special {
+            background-color: green;
+        }
+
+        /* div.all h1  */
+        div.all div:nth-child(2n-1) {
+            /* this is called child selector, this space allows us to select the child  */
+            background-color: yellow;
         }
     </style>
 </head>
 
 <body>
-    <!-- <div class="units">
-        <h1 class="units">Headline</h1>
-    </div> -->
+    <!-- <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam hic asperiores rerum alias quisquam repellat
+        eligendi, exercitationem dolorem nostrum provident, delectus quod, fugiat tempore. Illo accusamus necessitatibus
+        maiores, neque voluptatibus dolore natus? Sequi omnis modi, veniam voluptates eius nam, maxime alias id ullam
+        placeat assumenda soluta officia, ab nobis ea. Accusamus rerum repellendus esse aliquam in voluptatum autem
+        quas, dolore at nesciunt quasi! Atque vero, dolores recusandae voluptates consequuntur in porro minus error
+        ipsum dicta dolorum! Maxime illo, unde, doloremque sed reiciendis quas aperiam totam error, quam quaerat facere
+        quos saepe ipsa nisi ipsam. Cumque sed mollitia accusantium error nostrum.
 
-    <!-- positioning -->
-    <!-- why everything apears at top corner that because of the default properties  -->
-    <!-- <h1>Lorem ipsum</h1> -->
-    <!-- <div class="one">
-        <h2>heading of div one</h2>
-    </div> -->
-    <!-- <div class="two">
-        <h2>heading of div two</h2>
-    </div> -->
-
-    <!-- <img src="https://www.svgrepo.com/show/332117/message.svg" alt="" class="bot" />
-    <div class="two">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, voluptatibus illum? Repellat eos ipsa iure
-        similique eius quaerat corporis, vero dolorem laboriosam rem maiores hic unde repellendus commodi sequi at?
-        Deserunt, aliquid. Autem nesciunt veritatis deserunt deleniti illo corporis odit, architecto tenetur non illum,
-        eligendi id perspiciatis ratione tempore vitae fugit molestias provident aperiam minima eos quod. Dolorum,
-        impedit repellendus!
-        Eius sequi molestias doloremque! Debitis voluptas animi enim iste exercitationem, cum explicabo quam mollitia
-        corporis odio, fugit dolor aut expedita, maiores esse ipsa neque consequatur modi aliquid repellendus ea
-        laudantium!
-        Minima neque quidem iste qui ducimus distinctio odio esse deserunt eligendi ea eum sapiente quam enim maiores
-        laborum, accusantium velit, dolorum itaque suscipit minus accusamus eaque? Ea, vel earum? Pariatur.
-        Tempore asperiores rerum, voluptatum laudantium reprehenderit excepturi earum doloribus ipsa iusto aperiam
-        molestiae beatae facilis. Eaque quo ipsa maxime omnis! Tempora ab, in maiores dolorem debitis nulla nam
-        veritatis earum.
-        Minus architecto, in totam et eius adipisci dolores repellendus similique incidunt? Repellat eos fuga nobis
-        quisquam laboriosam, nam porro cupiditate illum aliquid eum, enim perferendis dolores. Enim ipsa sunt porro.
-        Voluptates dignissimos accusantium necessitatibus doloribus amet nulla possimus ab. Doloribus corrupti tempore,
-        eum in ad totam culpa. Animi cum consectetur iste at architecto, blanditiis numquam accusantium. Quia provident
-        suscipit rerum.
-        Recusandae at aspernatur corporis repudiandae pariatur deserunt facere maxime nam quisquam, mollitia blanditiis
-        nemo. Temporibus culpa architecto tempora odio. A quos, repellat corporis magni error quidem enim eius
-        dignissimos debitis?
-        Voluptatem est iure nisi vel voluptatibus. Tempora, voluptas, cupiditate a dolorem fugiat recusandae adipisci
-        omnis assumenda optio, at reiciendis excepturi voluptatibus modi? Maiores, atque ratione! Soluta voluptatibus ex
-        ipsum modi.
-        Architecto, reprehenderit incidunt nobis aliquid sapiente provident iure, laudantium perspiciatis vero mollitia
-        nemo in tempora, nihil atque! Libero, nam cum nostrum vitae doloribus minus sed officia nesciunt, quibusdam
-        dolorem optio?
-        Maiores labore odit, ipsa doloremque repellendus exercitationem praesentium quo cumque totam, possimus eum.
-        Dolorum quia, dicta id earum laborum possimus at omnis placeat sequi magnam, a ad. Quia, minus mollitia?
-        Odit nesciunt eligendi tempora dolores voluptate labore laborum expedita, esse fugit voluptas ratione optio
-        reprehenderit quia? Neque veniam molestias tempora. Odit animi dolorem libero rem ullam sit dolorum ex deserunt!
-        Non nemo alias fugit veritatis ad iure, tempore architecto earum sint atque ducimus labore minima temporibus.
-        Minima tempore, aut nobis quae eos rerum temporibus perferendis commodi minus culpa atque praesentium!
-        Laudantium animi molestias odio enim at esse rerum corrupti suscipit vitae nihil? Porro minus eos quos
-        reiciendis ad obcaecati quae magni voluptatum repellat doloribus, nisi totam harum amet blanditiis quaerat!
-        Ab, cum quidem iusto, quasi suscipit aliquam, molestias fugit cumque repellendus quaerat sequi rem aut accusamus
-        accusantium veritatis ducimus voluptatem. Quis doloribus ducimus asperiores repudiandae reiciendis adipisci
-        molestiae impedit rerum!
-        Magni repellat aliquid maiores, necessitatibus id non quis quod nemo ipsa nostrum neque fuga libero nam est,
-        fugiat a suscipit quae inventore dolor! Suscipit perferendis eligendi ipsam asperiores quas laborum?
-        Maxime assumenda sequi cumque est delectus quasi reiciendis dicta excepturi quo nam incidunt saepe perspiciatis
-        voluptate, aperiam similique, consequuntur praesentium ea corporis tempora! Provident, optio libero placeat
-        culpa eum officiis.
-        Architecto molestias dolore optio a exercitationem pariatur inventore quos sit quo? Vero quos nemo iusto illo
-        temporibus velit inventore, magnam ut voluptatum iure pariatur aliquam laborum fuga deleniti magni illum!
-        Corporis accusamus, explicabo voluptas neque commodi dolore, nostrum inventore eaque iste autem eveniet atque
-        nam? Eos nobis, iusto ut autem amet, reiciendis veniam sed modi maxime corrupti nemo ipsam voluptatum?
-        Autem illo ipsum ducimus magni, aliquid nisi quidem laudantium iste animi optio odio, quo itaque praesentium
-        rerum ab possimus, accusamus cumque vel? Porro neque soluta, corrupti esse sed beatae debitis?
-        Esse, atque officia quis similique soluta tempora obcaecati reiciendis labore doloremque, facere deleniti,
-        facilis numquam voluptatibus architecto aspernatur ullam consequatur aperiam excepturi voluptates deserunt nihil
-        amet. Autem fuga neque adipisci!
-        Deleniti asperiores repudiandae numquam dolore labore sequi enim. Fugiat beatae cum nobis, exercitationem eaque
-        suscipit! Totam quos libero beatae rerum, quas cumque sunt repellendus blanditiis tempore incidunt maiores
-        dignissimos cum?
-        Suscipit aspernatur voluptas excepturi similique non dolorum natus ea doloremque blanditiis, veniam cupiditate
-        sequi ullam numquam fugiat explicabo vitae perferendis ut quia nulla, libero quo deserunt quis? Repudiandae,
-        quas accusantium?
-        Praesentium quas est soluta doloremque quam aliquid repellendus impedit labore totam laudantium neque culpa
-        obcaecati, rem error ipsum aspernatur eveniet. Quisquam, adipisci rerum sapiente ex repellat voluptates est
-        itaque in.
-        Eius vel omnis ea minima praesentium eaque. Eos a ea placeat facere, consequuntur nesciunt quia dolorum
-        laudantium sapiente aperiam odit blanditiis nam aspernatur ducimus quam id quas fugiat molestiae iste.
-        Laudantium accusamus esse, adipisci provident harum quo commodi soluta dolores ex qui distinctio voluptates quos
-        unde, nihil modi molestiae! Aspernatur laudantium magnam fugiat atque quam adipisci nemo quae impedit similique?
-        Eligendi, repudiandae perspiciatis fugiat blanditiis vitae quae possimus maiores saepe tempore, nihil aperiam
-        illum officiis eum odio consectetur molestias aliquid qui autem nam rerum, placeat necessitatibus laborum
-        itaque? Quisquam, voluptate.
-        Porro non unde facilis nihil commodi, ducimus, recusandae ut, asperiores magnam debitis nulla ullam consectetur
-        inventore sint maiores nostrum aut illum tempore et deserunt vitae fugit perferendis. Vel, suscipit laborum!
-        Harum, alias eius quaerat cupiditate architecto asperiores iusto possimus. Fugiat, blanditiis enim excepturi
-        saepe nisi quod, cupiditate repellendus obcaecati eos animi placeat? Ea commodi est voluptate tempore numquam
-        explicabo dolorum.
-        Hic quod velit error doloremque fugiat laboriosam reiciendis provident voluptate saepe iusto. Autem ipsam
-        quaerat quae quibusdam distinctio est ad iure libero molestias itaque! Adipisci veniam consequuntur eos earum
-        sit?
-        Molestias, obcaecati ut? Recusandae expedita explicabo, laborum dolores, aut aperiam vel quos impedit odio
-        laudantium autem iste maxime quaerat deserunt! Hic unde, qui pariatur laboriosam rerum molestiae minima eius
-        distinctio?
-        Voluptatem sunt officia doloremque nisi alias voluptate nihil corrupti obcaecati praesentium molestiae,
-        sapiente, ducimus libero! Molestias nostrum ut eum, dolores non veritatis voluptatum cum, in soluta totam enim
-        quam perspiciatis.
-        Libero delectus dolor corrupti adipisci earum totam sequi consequatur, facere, aliquid temporibus quasi laborum,
-        ex voluptate repellat ut. Optio, at voluptate. Distinctio officiis esse facere aliquam suscipit tempore ipsum
-        sunt.
-        Nam, rem eaque repellat nemo eos laborum quisquam aperiam est aliquid possimus dolorum hic, architecto corrupti
-        explicabo, fuga provident natus ducimus enim quasi a asperiores cumque! Assumenda debitis in totam!
-        Quia maxime quae alias exercitationem minus unde temporibus, dolorum qui suscipit. Accusamus culpa praesentium
-        nulla architecto laborum, incidunt dolorum? Dolores sapiente architecto cupiditate quod aspernatur tempore
-        laudantium, autem hic minima.
-        Libero doloremque accusantium minima illum officiis veniam incidunt earum aliquam, adipisci dignissimos est ad
-        aperiam distinctio explicabo modi sit? Repudiandae id doloribus tenetur amet, soluta praesentium inventore quos
-        facere pariatur.
-        Rerum officiis reiciendis quos minus, neque perferendis nisi ratione atque unde accusamus architecto eligendi?
-        Deserunt maiores nobis aut facilis provident debitis, dolorem ratione hic sit quibusdam! Assumenda officia amet
-        tenetur?
-        Vel quas natus debitis voluptatibus, fugit praesentium aspernatur minus ad a. Doloribus quisquam labore fugiat
-        magnam vero, dolorem saepe earum odit neque necessitatibus illo, ducimus doloremque repellat minima! Aspernatur,
-        explicabo?
-        Vitae ipsum fugit, doloremque libero quis reprehenderit ab error nulla et deserunt culpa amet reiciendis odio
-        consequuntur ratione pariatur laboriosam non minus aut at, sint explicabo velit eaque unde! Error.
-        Pariatur, molestiae temporibus? Id reiciendis nostrum blanditiis officiis pariatur sit rem corrupti architecto
-        nam, accusantium repudiandae esse laudantium. Est voluptate animi eos dolorum laborum atque similique excepturi
-        totam molestias ab?
-        Officia vero minus iusto sed ab similique beatae magni deleniti aperiam et consequuntur amet voluptate
-        perspiciatis nesciunt placeat, ipsa, minima quia molestias veritatis, eveniet dolorem assumenda nihil natus
-        eligendi. Odit?
-        Quisquam explicabo dolores culpa similique deleniti unde enim hic quibusdam, omnis, expedita pariatur modi ullam
-        error! Alias consectetur exercitationem enim nihil ad tenetur veritatis molestiae nam, atque aliquam harum
-        quasi.
-        Possimus odit exercitationem voluptatibus recusandae quam, iure enim modi architecto aperiam, laudantium minus
-        quibusdam ex doloribus ducimus voluptate? Aut debitis commodi possimus rerum recusandae. Suscipit, perspiciatis
-        ducimus? Error, reprehenderit animi.
-        Perspiciatis aliquid suscipit voluptas eveniet dicta fugiat dignissimos perferendis eligendi, odit quos
-        voluptatem non nesciunt, saepe iste ut aut consequuntur distinctio culpa harum quibusdam? Mollitia porro
-        necessitatibus totam enim voluptatum?
-        Alias impedit assumenda ea quibusdam iure eius fugit cupiditate odit fugiat ipsum voluptates quidem, iusto minus
-        eaque veritatis esse corrupti itaque quas? Esse, deleniti. Cumque cum veritatis tempore doloribus provident.
-        Qui reiciendis, cum rem voluptas dolorum nemo harum, quod ducimus quaerat error illo nobis nulla pariatur velit
-        architecto aliquid, ipsum doloribus maxime nesciunt. Repellendus veritatis deleniti provident eos officiis
-        delectus!
-        Totam velit facilis inventore rem fugiat, deserunt ea nemo placeat eaque quod quibusdam iusto. Quibusdam, non
-        dolore in obcaecati quisquam officiis reprehenderit debitis perferendis atque, iusto at eos aliquid praesentium.
-        Excepturi, impedit! Hic aliquam fugit explicabo maiores nisi suscipit, ab vero veniam dolorem voluptatem
-        consequuntur commodi consequatur, sapiente id totam quisquam minima architecto dolore, mollitia temporibus eum
-        quidem fugiat eius!
-        Ullam, deleniti sed ipsum impedit aliquid rem, libero iure rerum ut quisquam consequatur! Molestiae, minus
-        quaerat quae, suscipit earum hic modi blanditiis non tempora unde laudantium. Maiores est libero veniam.
-        Ullam nostrum hic suscipit necessitatibus earum quaerat, facilis labore explicabo laudantium consectetur, facere
-        accusantium saepe non nihil? Nesciunt neque, perspiciatis nostrum dolorem est sed dolores eligendi libero
-        possimus quisquam quasi?
-        Iure eaque debitis qui eum alias. Molestias qui eum maiores consequuntur rerum soluta tempore nostrum ducimus
-        minus dolor, itaque libero sapiente praesentium ullam eius! Ratione id iusto odit et error.
-        Quod cupiditate totam, fugiat maiores nobis ut ea excepturi repellat, officiis iste eius? Officia quidem magni
-        cupiditate fuga culpa ducimus tempora, dolor ex doloribus facere. Magni porro quibusdam dolorum numquam?
-        Reprehenderit architecto aliquam impedit culpa numquam, quisquam, optio a ipsa nam iste cumque excepturi
-        corrupti explicabo sequi expedita repudiandae dolore alias? Fuga culpa quasi, ab ipsum repudiandae eius incidunt
-        libero.
-        Asperiores nesciunt adipisci alias iure ab consequatur? Odit ipsam hic deleniti, eum dolor sapiente ut quidem
-        atque minus repellendus, est modi odio numquam suscipit voluptatem. Magni ipsam neque ea. Quam!
-        Dolor at neque labore, consectetur voluptas quasi dignissimos obcaecati iusto fuga? Maiores quisquam voluptas
-        delectus cumque impedit, minus nihil a architecto ad eum, adipisci sequi dolorem voluptatum officiis at animi?
-        Minima deserunt eos perferendis dignissimos nam aliquam? Deleniti consequatur porro laboriosam error corrupti
-        culpa, eius aliquid sequi delectus exercitationem illo fugit est quia velit quisquam voluptates repudiandae quae
-        saepe pariatur.
-        Tempora fugit ipsa vitae dolor, eos aliquam ullam adipisci ab quia nisi saepe id excepturi velit deserunt! Omnis
-        deleniti cum consectetur quasi excepturi iste, reprehenderit ratione inventore, saepe ad eius!
-        Illo repellat nisi placeat molestias quis quidem. Reiciendis incidunt veniam voluptatem. Laboriosam, mollitia!
-        Reiciendis quidem ipsam eveniet nostrum nulla inventore hic. Aliquam ab praesentium impedit nisi veniam quisquam
-        numquam exercitationem.
-        Non, soluta nemo reprehenderit rerum illo libero facere corrupti aliquid iste voluptatum. Temporibus,
-        accusantium numquam neque ea esse, magnam accusamus sit adipisci veritatis qui deserunt illo, quos iusto
-        quisquam mollitia!
-        Earum porro expedita aliquam? Eius cupiditate omnis quod consequatur itaque praesentium aliquam repellat
-        excepturi, temporibus reprehenderit suscipit nisi laudantium. Maxime nostrum, nobis eligendi sed unde
-        consequatur iusto esse officia similique?
-        Dolor natus dolore nobis, debitis perspiciatis reprehenderit modi quos quisquam. Reprehenderit veniam eos,
-        voluptatum quae, earum temporibus ut quasi ratione, cum provident id quibusdam ullam exercitationem quas est
-        asperiores minima!
-        Asperiores nostrum, ratione beatae deserunt autem dolore ab perspiciatis voluptatibus alias distinctio
-        consequuntur quae commodi qui facilis, illo architecto repellendus ex? Ullam unde, nemo consequuntur sapiente
-        deserunt blanditiis natus asperiores?
-        Numquam ullam dolore animi ad voluptates. Nisi earum minima eligendi aperiam ipsam, laborum consequatur
-        voluptatibus quam asperiores, sunt corrupti assumenda eos a, officia tenetur dolor cupiditate quos vitae magni?
-        Accusamus.
-        Quod esse odio, magni voluptatibus optio illum consequatur, impedit odit earum ducimus deleniti sapiente
-        repudiandae aperiam dignissimos. Quibusdam quis laudantium necessitatibus cumque quos, nobis illum officiis nam,
-        voluptas, magnam dolorum.
-        Totam est ab magni non nemo laudantium ea facilis rerum. Nisi cumque maxime aliquid blanditiis. Ullam,
-        praesentium doloribus? Blanditiis expedita praesentium aliquid id excepturi. Excepturi molestias odit temporibus
-        unde velit.
-        Voluptatibus quisquam esse, sit ratione voluptatum veritatis quae mollitia, ipsa necessitatibus harum
-        repellendus quis ipsum, alias dolor a quo unde optio itaque officia magni possimus! Provident adipisci ipsa
-        velit fugit!
-        Vero consequatur deserunt atque libero odit dolorum, aliquam veritatis iure, accusamus aperiam pariatur eum quae
-        quis nobis mollitia dolore similique fuga neque aspernatur suscipit accusantium explicabo ad. Ipsa, beatae
-        molestiae!
-        Minima sequi veritatis quidem at facere alias esse reiciendis totam. Quasi repellat blanditiis recusandae hic
-        esse omnis eius nihil dicta impedit odio fugiat provident neque facere, placeat perferendis voluptatem ullam!
-        Animi rerum vero eligendi beatae eum? Placeat pariatur quaerat quasi. Voluptatem repellendus optio at recusandae
-        nihil. Voluptas soluta quo reprehenderit. Animi fuga aliquid odio hic numquam laborum natus, a inventore?
-        Fugit nostrum laboriosam accusamus labore sunt. Doloribus quas cum nihil, sunt odit eligendi sequi, repudiandae
-        eveniet veritatis maiores tempora nulla repellendus voluptatum ut autem? Cupiditate, porro dicta! Enim, aperiam
-        repellat!
-        Fugiat amet autem laboriosam nam beatae id laudantium voluptatum, itaque molestias dolor, necessitatibus et
-        asperiores corporis minus. Deserunt magni ratione enim unde similique commodi distinctio nemo fugit vero!
-        Voluptas, quia.
-        Ullam officia quibusdam perspiciatis architecto, praesentium ad perferendis laboriosam nihil ea totam
-        repellendus voluptate optio, reprehenderit doloribus in ab quaerat nostrum velit labore voluptatum atque quod
-        nemo quasi. Suscipit, corporis?
-        Rem error sed libero autem nostrum iste accusantium porro vitae natus excepturi at quisquam, nemo molestiae quod
-        eveniet provident, esse necessitatibus voluptatem vel. Ex, aut saepe sit optio minima natus?
-        Quaerat nesciunt nobis corporis neque, nemo nostrum animi fugit ipsum ea mollitia necessitatibus veniam aliquid
-        harum quod consectetur at provident aperiam laudantium facere ratione saepe quas! Blanditiis vero soluta
-        officia.
-        Officiis nobis numquam earum! Consequatur qui culpa tempore inventore aut, consequuntur cupiditate ducimus,
-        suscipit illo magni repudiandae quaerat dolores nesciunt doloremque at quam fugiat, quo architecto mollitia ad
-        sed reiciendis!
-        Saepe quod rem ex incidunt quae deserunt iure? Maxime, fuga cum? Tempora adipisci veniam a laudantium
-        dignissimos commodi quos magni necessitatibus possimus, consequatur repudiandae suscipit provident perferendis?
-        Aspernatur, ducimus et.
-        Id, earum explicabo. Necessitatibus alias provident minus quidem pariatur placeat distinctio tenetur? Quos nihil
-        pariatur porro. Repudiandae, nostrum atque. Ullam quas alias animi hic eos saepe dolores eaque molestias fuga?
-        Mollitia odio repellendus sint quidem fugit quam hic cumque unde nihil, expedita tempora nesciunt inventore
-        iusto at recusandae nisi quia, dolore vitae numquam culpa. Reiciendis distinctio blanditiis quas doloribus
-        laudantium.
-        Aperiam neque facere eos explicabo quae aliquam similique aliquid illo iste dolores veritatis porro vero
-        praesentium libero, tempore commodi repellat. Possimus quisquam accusamus eaque delectus reiciendis ut ab eum
-        reprehenderit.
-        Quaerat molestiae magnam consequatur, provident porro quam tempora illum iusto neque fugiat laborum alias
-        cupiditate fugit obcaecati a nostrum voluptas quae sed facilis earum quidem beatae labore, non assumenda. Fuga.
-    </div> -->
-
-    <div>
-        <h2>I am a heading</h2>
     </div>
+    <nav>
+        lorem
+    </nav>
+    <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At id ut adipisci porro, quae consectetur accusantium
+        error dolorum optio illum asperiores, unde, vel incidunt eius perferendis obcaecati et. Aut nisi doloremque
+        dolorem quod aspernatur in a, exercitationem optio, asperiores ipsam odit saepe laborum qui accusamus cumque id
+        reiciendis commodi quisquam natus animi. Est, tempore velit sint fuga ipsum placeat perspiciatis, laudantium
+        aspernatur quaerat accusamus a cumque quos tenetur consequuntur minima! Exercitationem accusantium assumenda ex
+        fugiat quae ratione. Perferendis quam officia, quasi molestiae harum numquam facilis aperiam minus accusamus
+        placeat itaque, similique iste molestias mollitia quos officiis a id sequi quisquam unde, ut ratione architecto
+        tenetur. Velit delectus repellendus modi inventore odit atque illum dolorum ipsa eligendi alias dignissimos eius
+        iste aspernatur eum fugiat optio recusandae maiores, necessitatibus libero. Quaerat quidem impedit eius, rerum
+        velit obcaecati repellendus ex deleniti distinctio. Ipsum eaque voluptates incidunt veniam! Rem et, fugit
+        officiis iste ut debitis similique dolorem nihil voluptatem dolor? Itaque nemo adipisci minus dignissimos
+        temporibus, sapiente quos, tempore esse veniam eum at obcaecati debitis aperiam! Hic consectetur commodi facilis
+        similique consequuntur nemo ut iste sit mollitia, porro cumque perspiciatis. Dolore enim natus nihil, molestiae
+        sint maiores doloribus quibusdam, optio officiis sunt accusantium dolorum nam vero voluptas suscipit voluptate,
+        rerum odio? Exercitationem, aspernatur. Perspiciatis nostrum sed excepturi voluptates non dignissimos sunt
+        accusantium distinctio! Fuga molestiae eum laboriosam doloribus at maiores explicabo sequi dolorem ullam vitae
+        cumque nostrum voluptas aut ipsa omnis ratione est et perferendis voluptate, quidem quibusdam atque unde. Ipsum
+        culpa quam corrupti numquam eos hic impedit doloribus aperiam tenetur ipsam deleniti, in dolores, deserunt amet
+        voluptates error, sed tempora fugit nesciunt! Quo mollitia, ut quasi, sed illo quidem nulla totam neque
+        aspernatur deleniti quia ab pariatur blanditiis quibusdam repellat omnis, unde accusantium commodi doloribus
+        sunt cumque autem consectetur? Ab quaerat minus tenetur voluptas eveniet incidunt, nesciunt impedit obcaecati
+        quos, fuga architecto consectetur corporis quae ad! Nesciunt repudiandae quos similique quidem, accusantium sit
+        esse maiores saepe officia. Inventore consectetur itaque similique, earum id doloremque accusamus quis
+        reiciendis eos? Ipsum nihil cum, soluta fuga tempora hic quod velit libero quas dolor beatae quibusdam qui ipsam
+        iste porro quia sapiente, dolorum architecto aspernatur perferendis odio amet dolore! Repellat placeat similique
+        a dolores, rerum quae cumque perspiciatis quia voluptate eligendi excepturi ex minima ipsa debitis nesciunt
+        illum. Minima ipsum vel dolor velit reiciendis magni, libero pariatur saepe tempore, neque eveniet asperiores
+        nisi ex. Libero ratione aperiam sunt molestias deleniti nobis non ad in praesentium minima culpa doloribus
+        suscipit, itaque possimus quae illo ducimus reprehenderit porro commodi enim rem ullam? Cum repudiandae magnam
+        vel neque veniam! Voluptas deserunt iusto repudiandae provident. Consectetur recusandae voluptatum quaerat
+        dolores fugit reiciendis. Repellat, accusamus nulla reprehenderit dolores delectus ullam explicabo doloribus
+        blanditiis! In voluptas tempore temporibus dolore sit illum et quod perspiciatis minima molestias amet ipsum,
+        quis illo labore non esse recusandae. Repellat aperiam dolore libero quibusdam nihil quia odit perferendis
+        pariatur optio doloremque eius ut, cumque dicta, maxime mollitia fugiat quaerat expedita et qui, saepe
+        aspernatur excepturi! Eaque, minus tempore!
+    </div> -->
+    <!-- <div class="parent"> -->
+    <!-- <div style="background-color: paleturquoise" ; class="child"></div>
+        <div style="background-color: red" ; class="child"></div>
+        <div style="background-color: blue" ; class="child"></div>
+        <div style="background-color: paleturquoise" ; class="child"></div>
+        <div style="background-color: red" ; class="child"></div>
+        <div style="background-color: blue" ; class="child"></div>
+        <div style="background-color: paleturquoise" ; class="child"></div>
+        <div style="background-color: red" ; class="child"></div>
+        <div style="background-color: blue" ; class="child"></div> -->
+    <!-- <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div> -->
+    <!-- <div class="second_child"></div> -->
+    <!-- </div>  -->
+    <!-- <h1 style="background-color: pink;">I am heading one</h1>
+    <h2 style="background-color: blue;">I am heading two</h2>
+    <h3 style="background-color: green;">Iam heading three</h3>
+    <hr>
+    <hr> -->
+    <!-- we can create ids and style all of these  -->
+    <!-- we can use classes but that will still be difficult to maintain for all  -->
+
+
+
+    <h1 class="background">I am heading one</h1>
+    <h2 id="unique" class="background">I am heading two</h2>
+    <h2 class="background">I am two by two</h2>
+    <h3 class="background">Iam heading three</h3>
+    <br>
+
+    <span class="background">I'm a span</span>
+    <span class="big">i am a span</span>
+    <h1 class="big">I am h1</h1>
+    <div class="all">
+        <div> I am a div </div>
+        <div>hello frnds</div>
+        <div>div again</div>
+        <div>div again</div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+margin: 4px;
+/* remove it in starting add it with background class */
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+h2 {
+padding: 5px;
+color: #f1f1f1;
+background-color: orchid;
+}
+
+h2:hover {
+background-color: red;
+cursor: cell;
+}
+
+div::selection {
+background-color: lime;
+}
+
+input:focus {
+background-color: red;
+color: blue;
+font-size: 2rem;
+}
+
+h2::after {
+content: "I am after";
+color: royalblue;
+font-size: 1rem;
+position: relative;
+}
+
+h2::before {
+content: "I am before";
+color: royalblue;
+font-size: 1rem;
+position: relative;
+}
+</style>
+
+</head>
+
+<body>
+    <h2>Heading</h2>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum dolorem aspernatur asperiores hic perspiciatis?
+        Officia laboriosam blanditiis nisi, inventore dicta laudantium molestias voluptatum quod. Doloremque illo
+        repellendus deleniti iusto iste.</div>
+    <input type="text">
+
+
+
+</body>
+
+</html>
+h2:nth-child(1) {
+padding: 5px;
+color: #f1f1f1;
+background-color: yellowgreen;
+transition-duration: 10s;
+transition-timing-function: linear;
+
+}
+
+h2:nth-child(2) {
+padding: 5px;
+color: #f1f1f1;
+background-color: yellowgreen;
+transition-duration: 10s;
+transition-timing-function: ease-in;
+
+}
+
+
+
+
+h2:hover {
+background-color: red;
+cursor: cell;
+}
+</style>
+
+</head>
+
+<body>
+    <h2>Heading</h2>
+    <h2>Heading</h2>
+
+
+
+
+</body>
+
+</html>
+
+
+div.parent {
+background-color: black;
+min-height: 500px;
+}
+
+div.child {
+background-color: yellowgreen;
+height: 100px;
+width: 100px;
+border-radius: 50%;
+/* transform: translate(10px); */
+/* transform: rotateY(60deg); */
+transition-duration: 5s;
+/* transition-timing-function: linear; */
+/* transition-timing-function: ease-in; */
+transition-timing-function: ease-out;
+transition-delay: 2sec;
+/* short hand */
+transition: 2s ease-in 1sec;
+}
+
+div.parent:hover div.child {
+background-color: blue;
+transform: rotateY(180deg);
+transform: translateX(200px);
+}
+</style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">Child</div>
+    </div>
+
 </body>
 
 </html>
