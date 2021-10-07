@@ -5,11 +5,157 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS-1</title>
+    <style>
+        h2 {
+            color: red;
+            font-size: 200px;
+        }
+
+        p {
+            color: green;
+            font-weight: bold;
+        }
+
+        #first {
+            color: violet;
+        }
+
+        .one {
+            color: blue;
+        }
+
+        .two {
+            color: brown;
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        .big {
+            font-size: 90px;
+        }
+
+        #magenta {
+            color: magenta;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        h3 {
+            color: purple;
+        }
+
+        img {
+            width: 500px;
+            /* border-color: black;
+            border-width: 20px;
+            border-style: dashed; */
+            border-radius: 100px;
+            border: 20px dashed black;
+            /* this is the short hand for border  */
+            /* filter: brightness(100); */
+            /* filter: blur(10px); */
+            /* filter:invert(20); */
+            /* border-top: 40px solid blue; */
+            /* there are many properties in css to play around and we can't cover all of them */
+        }
+
+        div {
+            height: 30px;
+            background-color: tomato;
+        }
+
+        span {
+            height: 30px;
+            width: 30px;
+            background-color: black;
+        }
+    </style>
+    <!-- there is also a short hand  -->
+    <!-- style tag selects all elements of the same type -->
+    <!-- selectors are something which allow us to select something specific -->
+    <!-- elemet selectors help us select all the elements  -->
+    <!-- # is used to select ids  -->
+    <!-- seniority order id>element selector  -->
+    <!-- if you want to give mutliple elements same style which are of different types we can use class -->
+    <!-- all the childs of the class obtain same properties   -->
+    <!-- a class can be given to many elements and they all will become its childs  -->
 </head>
+<!-- CSS is very symentic like to change thecolour we use color -->
+<!-- It is used to like make site attractive -->
+<!-- CSS is case sensitive and they need to be used with correct spelling -->
+<!-- there is a seniority order and internal CSS sits at its top  -->
+<!-- but if you write !important your style will be executed no matter the seniority  -->
+<!-- if you want to over come styles from internal styles you can use inline CSS -->
+<!-- CSS in heaad tag is know as internal CSS -->
+<!-- but instead of using inline CSS we can also use id which is unique to everyone -->
+<!-- . operater is used to select a class  -->
 
 <body>
-    This class was also on github and hence no file was made. So no file is needed.
+    <h1 style="color:blue; font-size:10px">Heading one</h1>
+    <p style="font-size:30px; color:yellowgreen ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Deserunt
+        architecto repellendus
+        eligendi sint, velit
+        voluptate, inventore ullam impedit et tenetur debitis laudantium dolores. Exercitationem rerum doloremque
+        architecto id? Distinctio, necessitatibus.
+    </p>
+    <h1 style="color:blue; font-size:10px">Heading one</h1>
+    <p style="font-size:30px; font-family: Metropolis;color:red ">Lorem ipsum dolor sit amet consectetur adipisicing
+        elit.
+        Deserunt
+        architecto repellendus
+        eligendi sint, velit
+        voluptate, inventore ullam impedit et tenetur debitis laudantium dolores. Exercitationem rerum doloremque
+        architecto id? Distinctio, necessitatibus.
+    </p>
+    <h1 id="first">Heading one</h1>
+    <p id ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Deserunt
+        architecto repellendus
+        eligendi sint, velit
+        voluptate, inventore ullam impedit et tenetur debitis laudantium dolores. Exercitationem rerum doloremque
+        architecto id? Distinctio, necessitatibus.
+    </p>
+    <!-- we are repeating the style attribute everytime -->
+    <!-- and copying is very bad for us -->
+    <!-- made our code difficult to debug   -->
+    <h2>I am H2</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, aliquid architecto voluptatum perspiciatis illum
+        quod beatae repudiandae reiciendis! A, non dignissimos. Cupiditate recusandae nulla aut et reiciendis tempore
+        ullam tempora.
+    </p>
+    <h2 class=" one">i am something</h2>
+    <p class="one">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis omnis nostrum nesciunt autem,
+        eveniet nam aut voluptatem, cupiditate vitae, cum adipisci eligendi molestias doloribus alias iste dicta aliquid
+        culpa nobis.
+    </p>
+    <h2 class="two">i am something</h2>
+    <p class="two">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis omnis nostrum nesciunt autem,
+        eveniet <b class="orange">nam aut</b> voluptatem, cupiditate vitae, cum adipisci eligendi molestias doloribus
+        alias ist <b class="orange big">sdjkhjxcv</b> dlzxkfjxlckvjcxvvm kj lkzxv
+    </p>
+
+    <h3>hello</h3>
+    <h3 class="yellow">hello</h3>
+    <h3 class="yellow" id="magenta"> hello</h3>
+    <h3 class="yellow" id="magenta" style=" color:turquoise"> hello</h3>
+    <!-- seniority order "elements selector<class<id<inline" -->
+
+    <img src="https://pictures.topspeed.com/IMG/crop/202011/cool-car-for-sale-20-5_1600x0w.jpg" alt="">
+    <div></div>
+    <span>hello</span>
+    <!-- span will not show up as we can't specify width and height for inline elements explicitely they always take the width of the object which is inside -->
+
+
+
 </body>
 
 </html>
