@@ -1,20 +1,19 @@
-var heading = document.getElementById("heading")
-var body = document.querySelector("body")
+var list = document.querySelector("ul")
 
+console.log(list)
 
-console.log(heading)
+var arr = ["go to the gym", "cook", "eat"]
 
-heading.innerHTML = "I was added by JS"
-heading.style = "color:red;font-size:5rem"
+arr.push("Complete  assignment")
 
-heading.classList.add("five")
-heading.classList.remove("one")
-
-
-
-console.log(heading.classList)
-
-body.classList.add("dark")
-// body.classList.remove("dark")
-
+for (var i = 0; i < arr.length; i++) {
+    var element = document.createElement("li")
+    var textNode = document.createTextNode(arr[i])
+    // console.log(arr[i]);
+    // console.log(textNode)
+    // console.log(element)
+    element.appendChild(textNode)
+    // console.log(element) 
+    list.appendChild(element)
+}
 
