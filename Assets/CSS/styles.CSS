@@ -1,0 +1,7 @@
+.animate{
+transform: translateX(500px) ;
+}
+.dark{
+    background-color: black;
+    color: white;
+}
