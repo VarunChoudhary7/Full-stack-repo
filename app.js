@@ -1,75 +1,48 @@
-// function greet(Name = "John", age = 19) {
-// console.log(Name, age)
+// var arr = ["go to gym ", "cook", "eat food"]
 
-// console.log("hello")
-
-
-// console.log("Hey " + Name + " your age is " + age)
-
+// for (var i = 0; i<arr.length; i++) {
+//     console.log(arr[i])
+// }
+// var callBackFunction = () => {
+//     console.log("I ran")
+// }
+// var callBackFunction = (elements, index) => {
+//     console.log(elements, index)
 // }
 
-// greet("VARUN", 18)
-// greet("VARUN")
 
-// function add(a = 0, b = 0) {
-//     console.log(a + b)
-//     var sum = a + b
-//     return sum
+// arr.forEach(callBackFunction)
+// arr.forEach((elements, index) => {
+//     console.log(elements, index)
 // }
-// console.log(sum) 
+// )
 
-// add(10)
-// when we use this it shows a NaN not a number
+var button = document.querySelector("button")
+var input = document.querySelector("input")
+var list = document.querySelector("ul")
 
-// var result = add(10, 20)
-// console.log(result)
+console.log(button, input, list)
 
-// var add = function (a = 0, b = 0) {
-//     var sum = a + b
-//     return sum
+
+// const callBackFunction = () => {
+//     console.log("sdf")
 // }
 
-// console.log(add(10, 20))
 
-// var greet = function () {
 
-//     console.log("hello")
+// button.addEventListener("click", () => {
+//     console.log("sdf")
+// })
+
+// const callBackFunction = (mystery) => {
+//     console.log("sdf", mystery)
 // }
 
-// greet()
-// console.log(add(10, 20))
-// function add(a = 0, b = 0) {
-//     console.log(a + b)
-//     var sum = a + b
-//     return sum
+// const callBackFunction = (event) => {
+//     console.log(event.target)
+//     console.log(input.value)
 // }
-// this function key word makes the function go at the top of the code by itself 
-
-
-// var result = add(10, 20)
-// console.log(result)
-
-// var add = function (a = 0, b = 0) {
-//     var sum = a + b
-//     return sum
-// }
-// this shows error as in this case we are using a variable before it is declared 
-
-// var add = (a = 0, b = 0) => {
-//     // var sum = a + b
-//     // return sum
-//     return a + b
-//}
-// this is an arrow function remove the function key word with an arrow 
-var add = (a = 0, b = 0) => a + b
-// this means that this arropw funtion returns a + b 
-
-console.log(add(10, 20))
-
-const greet = Name => "Hi" + Name
-console.log(greet(" Varun"))
 
 
 
-
-
+button.addEventListener("click", callBackFunction)
