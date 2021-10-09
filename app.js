@@ -1,75 +1,34 @@
-const a = document.querySelectorAll("input")[0]
-const b = document.querySelectorAll("input")[1]
-const add = document.querySelector("#add")
-const multiply = document.querySelector("#multiply")
-const subtract = document.querySelector("#subtract")
-const resultBox = document.querySelector(".result")
+var arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
-// const a = document.getElementsByTagName("input")[0]
-// const b = document.getElementsByTagName("input")[1]
-// console.log(a, b)
-// console.log(add, multiply)
-// console.log(result)
-
-const sum = () => {
-    const result = parseInt(a.value) + parseInt(b.value)
-    console.log(result)
-    resultBox.innerHTML = result
-    // resultBox.textContent = result
-
-}
+// arr.unshift(6)
+// console.log(arr)
 
 
+// console.log(arr.unshift(6))
+// arr.shift()
+// console.log(arr)
+// shift deletes the first Element and unshits adds element at the first place
 
-const product = () => {
-    const result = parseInt(a.value) * parseInt(b.value)
-    console.log(result)
-    resultBox.innerHTML = result
-    // resultBox.textContent = result
+// var new_arr = arr.slice(2, 5)
+// // this does not change the original array it only modifies it 
+// // 2 is inclusive while 5 is not 
+// console.log(new_arr)
+// var new_arr = []
+// for (var i = 0; i < arr.length; i++) {
+//     if (
+//         arr[i]
+//         % 2 === 0)
+//         new_arr.push(arr[i])
+// }
 
-}
+// console.log(new_arr)
 
-// const calculate = (event, operation) => {
-const calculate = (event, operation) => {
-
-    // console.log(event.target)
-    // if (operation == "add") {
-    //     console.log("adding")
-    // }
-    // else if (operation == "multiply") {
-    //     console.log("multiplying")
-    // }
-    switch (operation) {
-        case "add":
-            resultBox.innerHTML = parseInt(a.value) + parseInt(b.value)
-            break
-        case "multiply":
-            resultBox.innerHTML = parseInt(a.value) * parseInt(b.value)
-            break
-        case "subtract":
-            resultBox.innerHTML = parseInt(a.value) - parseInt(b.value)
-            break
-
-        default:
-            resultBox.innerHTML = "Not a valid option"
-    }
-
-
-}
-
-
-
-// add.addEventListener("click", sum)
-// multiply.addEventListener("click", product)
-// add.addEventListener("click", calculate("add"))
-// in this we are doing a function call but we just need to pass the signature
-add.addEventListener("click", (event) => {
-    // console.log(multiplying)
-    // return calculate(add)
-    calculate(event, "add")
+var new_arr = arr.filter((element, index) => {
+    // console.log(element, index)
+    // if (element % 2 === 0) return true
+    if (element < 4) return true
 })
-multiply.addEventListener("click", (event) => calculate(event, "multiply"))
-subtract.addEventListener("click", (event) => calculate(event, "subtract"))
+console.log(new_arr)
 
 
 
