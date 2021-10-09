@@ -8,6 +8,7 @@ var tags = document.getElementsByTagName('a')
 var query = document.querySelector("#heading")
 // it uses css selectors 
 var hello = document.querySelector(".para")
+var all = document.querySelectorAll(".para")
 
 
 console.log(heading)
@@ -25,3 +26,5 @@ console.log(para[1])
 console.log(tags)
 console.log(query)
 console.log(hello)
+console.log(para)
+console.log(all)
