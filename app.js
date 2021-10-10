@@ -1,81 +1,89 @@
-// let a = 20
-// var b = 10
+// console.log(this)
+// console.log(this.alert("Hi"))
 
-// console.log(a, b)
+// let manufacturer = "Ferrari"
 
-// a = 23
-// b = 54
-// console.log(a, b)
+// let car = {
+//     Name: "C class",
+//     manufacturer: "Mercedes",
+//     // print: function (a) {
+//     print: function () {
 
-// if (true) {
-//     var Name = "ferrari"
-//     console.log(Name)
-// }
+//         // console.log(this.Name + " by " + this.manufacturer)
 
-// console.log(Name)
+//         // console.log(a)
 
-// if (true) {
-//     let Name = "ferrari"
-//     console.log(Name)
-// }
-
-// console.log(Name)
-
-// this shows that there is a diff between let and variable
-
-// if (true) {
-//     // let Name = "ferrari"
-//     var Name = "ferrari"
-
-// }
-// if (true) {
-//     console.log(Name)
-// }
-
-// console.log(Name)
-
-// // for (var i = 0; i < 10; i++) {
-// for (let i = 0; i < 10; i++) {
-//     // console.log("loop ran")
-// }
-
-// console.log(i)
+//         // console.log(this)
+//         let manufacturer = "BMW" // second line fisrt is at top
+//         console.log(manufacturer)
+//         console.log(car.manufacturer, car.Name)
+//         console.log(this.manufacturer, this.Name)
 
 
-// if (true) {
-//     // var Name = "ferrari"
-//     let Name = "ferrari"
-//     if (true) {
-//         console.log(Name)
 //     }
 // }
 
-// if (true) {
-//     console.log(Name)
-//     if (true) {
-//         var Name = "ferrari"
+// console.log(car)
+// console.log(typeof car)
+// console.log(car.Name)
+
+// console.log(car.manufacturer)
+// console.log(car.print())
+
+// car.print("ferrari")
+// console.log(car)
+
+// car.print()
+
+// let obj = {
+//     h: "hello",
+//     w: "world",
+//     print: function () {
+//         // console.log("hello world")
+//         console.log(this);
+//         console.log(this.h + this.w);
+//         console.log(obj.h);
+
+
 //     }
 // }
 
-// a child can access a parent but a parent can't access a child  
+// // console.log(obj.print("sdhf"))
+// // this returns nothing and hence you will see an undefined in console
 
-const print = () => {
-    var Name = "mercedes"
+// const temp = obj.print("sjhf");
+// console.log(temp)
 
-    if (true) {
-        console.log(Name)
+let car = {
+    Name: "C class",
+    manufacturer: "Mercedes",
+    // print: function () {
+
+    //     // console.log(car.manufacturer, car.Name)
+    //     // console.log(this.manufacturer, this.Name)
+
+    //     // instead of using car we can use this 
+    //     // console.log(this.Name + " this car was manufactured by " + this.manufacturer)
+    //     console.log(`${this.Name} was created by ${this.manufacturer}`)
+
+    // }
+    print: () => {
+        // an arrow syntax always points toward the window while function method points to the object it is in 
+        console.log(this)
+
+        // console.log(`${this.Name} was created by ${this.manufacturer}`)
+        console.log(`${car.Name} was created by ${car.manufacturer}`)
     }
-    return Name
-
 }
+// car.print()
 
-// in fuction no global scope occur
-// print() 
-// console.log(Name)
-// const is a block scope similar to a let 
+console.log(car)
+console.log(Object)
 
-print()
+console.log(Object.keys(car))
 
+console.log(Object.values(car))
+console.log(car.hasOwnProperty("Name"))
 
 
 
