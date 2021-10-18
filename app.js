@@ -1,31 +1,35 @@
-// const hello = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve("My name is Varun")
-//     }, 3000
-//     )
+// ul = document.querySelector("ul");
+// // console.log(ul);
+// let response = fetch("https://jsonplaceholder.typicode.com/users").then(resp => resp.json()).then(data => {
+//     console.log(data);
+//     append_data = (element) => {
+//         lielement = document.createElement("li");
+//         user_detail = element['name'] + element['username'] + element['email']
+//         textnode = document.createTextNode(user_detail);
+//         lielement.appendChild(textnode);
+//         ul.appendChild(lielement);
+//     }
+//     data.forEach(append_data);
 
-// })
-// // console.log(hello)
-// // setTimeout(() => {
-// //     console.log(hello)
+//}
 
-// // }, 4000)
+const table = document.querySelector("table")
 
-// hello.then(name => { console.log(name) })
+console.log(table)
 
 
-// the task to display all the data after fetching from the url 
-ul = document.querySelector("ul");
-// console.log(ul);
-let response = fetch("https://jsonplaceholder.typicode.com/users").then(resp => resp.json()).then(data => {
-    console.log(data);
-    append_data = (element) => {
-        lielement = document.createElement("li");
-        user_detail = element['name'] + element['username'] + element['email']
-        textnode = document.createTextNode(user_detail);
-        lielement.appendChild(textnode);
-        ul.appendChild(lielement);
-    }
-    data.forEach(append_data);
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res => res.json())
+    // .then(data => console.log(data))
+    .then(data => {
+        data.forEach(user => {
+            // console.log(user)
+            let newRow = document.querySelector("tr")
+            let dataId = document.querySelector("td")
+            let dataIdTextNode = document.createTextNode(user.id)
+            dataId.appendChild(dataIdTextNode)
+            newRow.appendChild(dataId)
 
-})
+            table.appendChild(newRow)
+        });
+    })
