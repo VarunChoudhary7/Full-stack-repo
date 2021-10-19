@@ -1,18 +1,31 @@
-const input = document.querySelector('input')
-const button = document.querySelector('button')
+// let greet = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("welcome")
+//     }, 2000)
+// })
+// greet.then(value => {
+//     console.log(value)
+//     return "welcome again"
+//     // if this return is not thre then we will get and undefined in console 
+// }).then(newValue => {
+//     console.log(newValue);
+// })
 
-const getData = async (item) => {
-    const url = `https://api.edamam.com/search?app_id=bd51454f&app_key=3b359328e30cad3141319969dfedaba9&q=${item}`
+// console.log(greet)
 
-    const res = await fetch(url)
-    const data = await res.json()
+// setTimeout(() => {
+//     console.log(greet)
+// }, 6000)
+
+let response = fetch("https://jsonplaceholder.typicode.com/todos/10")
+
+// console.log(response)
+
+response.then(data => {
     // console.log(data)
-    console.log(data.hits)
-
-
-}
-
-
-button.addEventListener('click', (e) => {
-    getData(input.value)
+    // console.log(data.json())
+    // jsn is a promise as it needs some time to complete it is not a synchronous task 
+    return (data.json())
+}).then(content => {
+    console.log(content)
 })
