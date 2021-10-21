@@ -6,29 +6,34 @@ const parent = document.querySelector("div.grid")
 
 
 const getData = async (item) => {
-    // console.log(item)
+    console.log(item)
 
     const url = `https://api.edamam.com/search?app_id=bd51454f&app_key=3b359328e30cad3141319969dfedaba9&q=${item}`
-    // console.log(url)
+    console.log(url)
     const res = await fetch(url)
     const data = await res.json()
     const recipies = data.hits
     recipies.forEach(item => {
+        const { recipe } = item
         // console.log(item)
-        console.log(item.recipe.lable)
-        const template = ` <img class="card__image" src="https://i.ibb.co/RT0bjJq/food1.png" />
+        // console.log(item.recipe.label)
+        // console.log(recipe)
+        const { label, image, source, calories } = recipe
+        // console.log(label, image, source, calories)
+        const template = ` <img class="card__image" src="${image}" />
         <div class="card__data">
             <div class="card__info">
-                <h2>Nombre Comida</h2>
-                <p>Descripcion de la comida, con ingredientes</p>
+                <h2>${label}</h2>
+                <p>from ${source}</p>
             </div>
-            <h3 class="card__price">$7.50</h3>
+                
+                <h3 class="card__price">${calories.toFixed(2)}</h3>
             <button class="card__add">+</button>
         </div>`
         const newCard = document.createElement("article")
         newCard.setAttribute("class", "card")
         // it accepts two parameters first is attribute type then its value 
-        newCard.setAttribute("style", "margin-bottom:2px")
+        newCard.setAttribute("style", "margin-bottom:50px")
 
         newCard.innerHTML = template
         // console.log(newCard)
@@ -43,3 +48,5 @@ const getData = async (item) => {
 button.addEventListener('click', (e) => {
     getData(getText.value)
 })
+
+
