@@ -1,31 +1,45 @@
-// let greet = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve("welcome")
-//     }, 2000)
-// })
-// greet.then(value => {
-//     console.log(value)
-//     return "welcome again"
-//     // if this return is not thre then we will get and undefined in console 
-// }).then(newValue => {
-//     console.log(newValue);
-// })
+const ul = document.querySelector('ul')
+const button = document.querySelector('button')
+const getText = document.querySelector('input')
+const parent = document.querySelector("div.grid")
 
-// console.log(greet)
 
-// setTimeout(() => {
-//     console.log(greet)
-// }, 6000)
 
-let response = fetch("https://jsonplaceholder.typicode.com/todos/10")
+const getData = async (item) => {
+    // console.log(item)
 
-// console.log(response)
+    const url = `https://api.edamam.com/search?app_id=bd51454f&app_key=3b359328e30cad3141319969dfedaba9&q=${item}`
+    // console.log(url)
+    const res = await fetch(url)
+    const data = await res.json()
+    const recipies = data.hits
+    recipies.forEach(item => {
+        // console.log(item)
+        console.log(item.recipe.lable)
+        const template = ` <img class="card__image" src="https://i.ibb.co/RT0bjJq/food1.png" />
+        <div class="card__data">
+            <div class="card__info">
+                <h2>Nombre Comida</h2>
+                <p>Descripcion de la comida, con ingredientes</p>
+            </div>
+            <h3 class="card__price">$7.50</h3>
+            <button class="card__add">+</button>
+        </div>`
+        const newCard = document.createElement("article")
+        newCard.setAttribute("class", "card")
+        // it accepts two parameters first is attribute type then its value 
+        newCard.setAttribute("style", "margin-bottom:2px")
 
-response.then(data => {
-    // console.log(data)
-    // console.log(data.json())
-    // jsn is a promise as it needs some time to complete it is not a synchronous task 
-    return (data.json())
-}).then(content => {
-    console.log(content)
+        newCard.innerHTML = template
+        // console.log(newCard)
+        parent.appendChild(newCard)
+
+    });
+
+
+}
+
+
+button.addEventListener('click', (e) => {
+    getData(getText.value)
 })
