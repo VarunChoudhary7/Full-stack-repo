@@ -27,13 +27,6 @@ const greet = () => "hi"
 // module.exports['something'] = 'hi'
 module.exports.greet = greet
 
-console.log(module)
+// console.log(module)
 
-
-
-
-
-
-
-
-
+console.log("i am index.js")
