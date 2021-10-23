@@ -1,32 +1,8 @@
-// console.log("something")
-
-// for (var i = 0; i < 10; i++) {
-//     console.log('iteration', i + 1)
-// }
-
-// console.log(document)
-// it will throw an eror as there is no dom bcoz it was created by the browser
-
-// console.log(window)
-// it is also undefined 
-
-// setTimeout(() => {
-//     console.log('hello')
-// }, 2000)
-// this is provide to us by V8 engine so it works fine without any error
-
-
-// a module is just a file in which we have defined our code seperaely and are importing and exporting our code from there for use 
-// it just makes our code more organised 
-// console.log(module)
-// only node js supports these modules chrome will throw an error 
-
-const greet = () => "hi"
-
-// module.exports.something = 'hi'
-// module.exports['something'] = 'hi'
-module.exports.greet = greet
-
-// console.log(module)
-
-console.log("i am index.js")
+// types of requests
+// Get, post,put,patch,delete
+// get gets you the Data from the resource you want to fetch is a get request 
+// post posts your data as you post your data while submiting a form like on facebook and any where else
+// delete deletes you data name is enough to know
+// put and patch but are updation requests but put upgrades by replacing you data while patch does the upgradation of the data entered
+// eg if we have name and id and do a put request while passing only id then it will also change the name to blank 
+// while if we do patch and pass an id only then it will only change the id leaving the name as it is
