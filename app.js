@@ -1,33 +1,29 @@
-// path module
-const { resolveSoa } = require('dns')
-const path = require('path')
+const fs = require('fs')
 
-// console.log(path)
+// console.log(fs)
+// fs.readFile('./test.txt', (data, error) => {
+// fs.readFile('./test.txt', (error, data) => {
+// fs.readFile('./test.txt', 'utf8', (error, data) => {
+//     // this utf8 makes it gives the text instead of buffer 
+//     // error is first parameter and then comes data 
+//     if (error) console.log(error)
+//     else console.log(data)
+//     // else console.log(typeof data)
+// })
 
+// console.log('I am a log')
+// // this will run first 
+// // this shows that read file is an ashynchronous task 
 
-// console.log(path.resolve('./app.js'))
-//resolve do this is turnig our relative path to absolute path 
+// console.log(fs.readFileSync('./test.txt', 'utf8'))
+// // this is a synchronous task and runs in between 
+// console.log('I am a log')
 
-// console.log(path.relative('./temp', "./temp/utils.js"))
-// in this we pass two paramters the first one shows relative to and second one is the file whose path you want relative to the first one
-// humein chahiye dusre ka path pehle vale ke respect mein 
+// fs.writeFile('./test.txt', 'Hello frnds chai peelo', (error) => {
+// we also pass the text we want to add 
+fs.writeFile('./test.txt', `Aap zra ${fs.readFileSync('./test.txt', 'utf8')}`, (error) => {
 
-// console.log(path.relative('./', "./temp/utils.js"))
-// console.log(path.relative('../', "./temp/utils.js"))
-// console.log(path.relative('/', "./temp/utils.js"))
-// this / signifies root of the computer here 
+    if (error) console.log(error)
+})
 
-// console.log(path.extname('./app.js'))
-// this shows us the extension name 
-
-// console.log(path.dirname('./temp/utils.js'))
-// this shows us the directory name only 
-
-// console.log(__dirname)
-// this shows us the path of the current directory 
-// it is similar to resolve
-
-console.log(path.join(__dirname, 'app.js'))
-// path.join joins the path of the two files or connects the two files
-
-
+// we also have write file sync and it works just like read file sync 
