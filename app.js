@@ -1,10 +1,18 @@
-// const stuff = require('./utils')
-const { add, subtract, multiply, divide, message } = require('./utils')
-// console.log(stuff)
+const button = document.querySelector('button')
+const input = document.querySelector('input')
+const div = document.querySelector('div')
 
-add()
-subtract()
-multiply()
-divide()
+button.addEventListener('click', (req, res) => {
+    div.innerHTML = input.value
+    // div.innerHTML = input
+    // inner Html expects a string nothing else 
+})
 
-console.log(message)
+// local storage is just a storage at my browser and it stores my data 
+
+
+
+
+
+
+
