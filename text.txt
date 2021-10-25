@@ -1,5 +1,0 @@
-you need to do --npm version tocheck the version
-you can do npm i axios to install axios and similar to install other things
-you can do npm uninstall package to uninstall something
-
-you can do npm init --y to create the file itself
