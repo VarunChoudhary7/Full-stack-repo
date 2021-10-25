@@ -6,22 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NJS 4</title>
-    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <h1>I am a heading</h1>
 
-    <img width="500px"
-        src="https://images.unsplash.com/photo-1635100918710-d55b4353b8fd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1587&q=80"
-        alt=""> -->
-    <div>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus minima atque voluptatem distinctio consequatur
-        illo neque incidunt deserunt! Culpa molestias repellendus optio est consectetur perferendis! Autem, quaerat
-        quam! Iusto, exercitationem!2
-    </div>
+    <ul></ul>
     <script>
-        window.alert('I am a response')
+        const data = fetch('http://localhost:3000/getNames').then(data => {
+            console.log(data)
+        })
     </script>
 </body>
 
