@@ -2,27 +2,39 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
-// const logger = (req, res, next) => {
-//     console.log(req.method)
-//     next()
-// }
-
-// app.use(logger)
-// this will use middleware in each request 
-
 app.use(express.json())
-// this  just makees it a string 
 
-// app.get('/', logger, (req, res) => {
-app.get('/', (req, res) => {
-    res.send("Server is running")
+let products = [{ name: "iPhone 12 case", price: "999" }, { name: "iPhone 13 case", price: "1199" }, { name: "iPhone 13 pro case", price: "1499" }]
+
+//--------------PUBLIC Route------------ 
+//this route is a get route 
+//this will send products as response
+app.get('/products', (req, res) => {
+    // res.send(products)
+    res.json({ products })
+    // after this we don't need to parse it it will do that automatically
+
 })
 
-// app.post('/', logger, (req, res) => {
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.send("Server is running")
+//--------------PRIVATE Route------------ 
+
+app.post('/products/add', (req, res) => {
+    // console.log(req.body)
+    const { name, price } = req.body
+    const newProduct = {
+        // name: req.body.name,
+        // name: name,
+        name,
+        // this works the same way the above command do because es6 allows you to do this 
+        // price: req.body.price,
+        // price: price,
+        price,
+    }
+    products.push(newProduct)
+    res.send('product added')
 })
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running at port: ${PORT} `)
