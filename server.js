@@ -4,41 +4,51 @@ const PORT = 3000
 
 app.use(express.json())
 
+const token = "TOP_SECRET"
+
 let products = [{ name: "iPhone 12 case", price: "999" }, { name: "iPhone 13 case", price: "1199" }, { name: "iPhone 13 pro case", price: "1499" }]
 
+
 // MIDDlEWARE
-const validator=(req,res,next)=>{
-    
+const validator = (req, res, next) => {
+    const { name, price } = req.body
+    if (!name || !price) res.json({ error: "Validation Failed" })
+    else next()
+}
+
+const isAuthorised = (req, res, next) => {
+    if (req.headers.authorisation === token) next()
+    else res.json({ error: "Authorization Failed" })
 }
 
 
 //--------------PUBLIC Route------------ 
-//this route is a get route 
-//this will send products as response
 app.get('/products', (req, res) => {
     res.json({ products })
 })
 
 //--------------PRIVATE Route------------ 
 
-app.post('/products/add', (req, res) => {
+app.post('/products/add', isAuthorised, validator, (req, res) => {
     const { name, price } = req.body
-    // const newProduct = {
-    //     name,
-    //     price,
-    // }
 
-    if (!name || !price) res.send({ error: "Validation Failed" })
-    else {
-
-        products.push({
-            name,
-            price,
-        })
-        res.send({ products })
-    }
+    products.push({
+        name,
+        price,
+    })
+    res.send({ products })
 })
 
+
+//-----------AUTHENTICATION Route----------
+app.post('/products/auth', (req, res) => {
+    const { email, password } = req.body
+    if (email === "admin@mail.com" && password === "password") {
+        res.send({ token })
+    } else {
+        res.send({ message: "UNAUTHORISED" })
+    }
+})
 
 
 app.listen(PORT, () => {
