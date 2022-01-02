@@ -19,27 +19,36 @@
 
     <title>Bootstrap</title>
     <style>
-        div {
-            min-height: 50px;
+        div.row {
+            background-color: black;
+        }
+
+        div.row div {
+            background-color: yellow;
+
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container bg-primary">
-        <!-- <div class="w-50 bg-danger m-2"></div> -->
-        <!-- this means width is 50% -->
-        <!-- <div class="w-100 bg-info m-2 d-inline"></div> -->
-        <!-- <div class="w-75 bg-danger m-2 d-inline"></div> -->
+    <!-- <div class="container-lg"> -->
+    <div class="container-xxl">
 
-        <!-- <div class="w-100 bg-info m-2 d-inline">Hello</div> -->
-        <!-- <div class="w-75 bg-danger m-2 d-inline">Hio</div> -->
-
-        <!-- <div class="w-25 bg-info m-2 d-inline-block"></div>
-        <div class="w-25 bg-danger m-2 d-inline-block"></div> -->
-
-        <div class="w-25 bg-info m-2 d-md-block d-none"></div>
+        <div class="row">
+            <!-- there can be 12 columns in a row -->
+            <!-- <div class="col-sm-9 border border-4 border-danger">One of the three col-smumns</div>
+            <div class="col-sm-3 border border-4 border-danger">One of the three col-smumns</div>
+            <div class="col-sm-8 border border-4 border-danger">One of the three col-smumns</div>
+            <div class="col-sm-4 border border-4 border-danger">One of the three col-smumns</div>
+            <div class="col-sm-5 border border-4 border-danger">One of the three col-smumns</div>
+            <div class="col-sm-7 border border-4 border-danger">One of the three col-smumns</div> -->
+            <div class="col-lg-3 cold-md-4 col-sm-6 border border-4 border-danger">One of the three column</div>
+            <div class="col-lg-3 cold-md-4 col-sm-6 border border-4 border-danger">One of the three column</div>
+            <div class="col-lg-3 cold-md-4 col-sm-6 border border-4 border-danger">One of the three column</div>
+            <div class="col-lg-3 cold-md-4 col-sm-6 border border-4 border-danger">One of the three column</div>
+            <div class="col-lg-3 cold-md-4 col-sm-6 border border-4 border-danger">One of the three column</div>
+        </div>
     </div>
 
 </body>
