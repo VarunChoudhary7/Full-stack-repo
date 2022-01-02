@@ -19,60 +19,159 @@
 
     <title>Bootstrap</title>
     <style>
-        div.row {
-            background-color: black;
-        }
 
-        div.row div {
-            background-color: yellow;
-
-        }
     </style>
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Features</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
+    <!-- <button data-bs-target="#me" data-bs-toggle="collapse">Click</button>
+    <div id="me" class="collapse">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatibus temporibus,
+        praesentium inventore aut consequuntur, eum necessitatibus quae nobis voluptas tempora sint nihil ad ipsum,
+        dignissimos unde impedit. Dolor, officiis.</div>
+    <div id="me" class="collapse">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo voluptatibus temporibus,
+        praesentium inventore aut consequuntur, eum necessitatibus quae nobis voluptas tempora sint nihil ad ipsum,
+        dignissimos unde impedit. Dolor, officiis.</div> -->
+
+    <!-- <button class="btn btn-primary btn-sm">Click</button> -->
+
+    <!-- Modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- here fade is just forshowy fade effect -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- ... -->
+                    <form action="">
+                        <input type="text" />
+                        <input type="color" />
+                        <input type="date" />
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi officiis dolore deleniti quod iusto,
+                doloremque aut sint accusantium eum eaque, possimus ullam quia est adipisci optio ex placeat, et
+                similique! -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Card  -->
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">i am header</div>
+                <div class="card-body">
+                    <h3 class="card-title">I am title</h3>
+                    <div class="card-text">i am card text</div>
+                </div>
+                <div class="card-footer text-muted">2 days ago</div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">i am header</div>
+                <div class="card-body">
+                    <h3 class="card-title">I am title</h3>
+                    <div class="card-text">i am card text</div>
+                </div>
+                <div class="card-footer text-muted">2 days ago</div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header">i am header</div>
+                <div class="card-body">
+                    <h3 class="card-title">I am title</h3>
+                    <div class="card-text">i am card text</div>
+                </div>
+                <div class="card-footer text-muted">2 days ago</div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://image.shutterstock.com/image-photo/condolences-hand-holding-envelope-invitation-260nw-636591176.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://image.shutterstock.com/image-photo/concept-read-across-book-quickly-260nw-1857933748.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://image.shutterstock.com/z/stock-photo-blank-notepad-paper-with-pen-isolated-on-white-background-this-has-clipping-path-1331184569.jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </body>
 
 </html>
